@@ -18,7 +18,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "..\\NewDatabase\\NewDatabase.sqlproj",
+   "UiHint": "D:\\Source\\SQL-Database-Projects\\NewDatabase\\bin\\Debug\\NewDatabase.dacpac",
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
    "UseDbContextSplitting": false,
