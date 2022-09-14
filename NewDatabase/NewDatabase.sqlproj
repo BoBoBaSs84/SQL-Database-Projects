@@ -14,14 +14,18 @@
     <TargetFrameworkProfile />
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <Trustworthy>True</Trustworthy>
+    <AssemblyName>Magic.Switch.Board</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DocumentationFile>bin\Debug\NewDatabase.xml</DocumentationFile>
     <LangVersion>default</LangVersion>
     <TreatTSqlWarningsAsErrors>True</TreatTSqlWarningsAsErrors>
-    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
-    <SqlCodeAnalysisRules>+!Microsoft.Rules.Data.SR0001;+!Microsoft.Rules.Data.SR0004;+!Microsoft.Rules.Data.SR0005;+!Microsoft.Rules.Data.SR0006;+!Microsoft.Rules.Data.SR0007;+!Microsoft.Rules.Data.SR0008;+!Microsoft.Rules.Data.SR0009;+!Microsoft.Rules.Data.SR0010;+!Microsoft.Rules.Data.SR0011;+!Microsoft.Rules.Data.SR0012;+!Microsoft.Rules.Data.SR0013;+!Microsoft.Rules.Data.SR0014;+!Microsoft.Rules.Data.SR0015;+!Microsoft.Rules.Data.SR0016</SqlCodeAnalysisRules>
+    <RunSqlCodeAnalysis>False</RunSqlCodeAnalysis>
+    <SqlCodeAnalysisRules>-!Microsoft.Rules.Data.SR0001;-!Microsoft.Rules.Data.SR0004;-!Microsoft.Rules.Data.SR0005;-!Microsoft.Rules.Data.SR0006;-!Microsoft.Rules.Data.SR0007;-!Microsoft.Rules.Data.SR0008;-!Microsoft.Rules.Data.SR0009;-!Microsoft.Rules.Data.SR0010;-!Microsoft.Rules.Data.SR0011;-!Microsoft.Rules.Data.SR0012;-!Microsoft.Rules.Data.SR0013;-!Microsoft.Rules.Data.SR0014;-!Microsoft.Rules.Data.SR0015;-!Microsoft.Rules.Data.SR0016</SqlCodeAnalysisRules>
+    <SqlTargetName>Magic.Switch</SqlTargetName>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Security" />
@@ -35,8 +39,6 @@
     <Build Include="Security\Schema\private.sql" />
     <Build Include="Security\Schema\app.sql" />
     <Build Include="Security\Schema\history.sql" />
-    <Build Include="Tables\private\Person.sql" />
-    <Build Include="Views\app\Person.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Key.snk" />

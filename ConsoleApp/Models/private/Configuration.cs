@@ -8,18 +8,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp.Models
 {
-    [Table("Person", Schema = "private")]
-    public partial class Person
+    [Table("Configuration", Schema = "private")]
+    public partial class Configuration
     {
         [Key]
-        public int PersonId { get; set; }
+        public Guid ConfigurationId { get; set; }
         [Required]
-        [StringLength(50)]
-        public string FirstName { get; set; }
-        [StringLength(50)]
-        public string MiddleName { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string LastName { get; set; }
+        [Column(TypeName = "xml")]
+        public string XmlData { get; set; }
+        public DateTime ValidFrom { get; set; }
+        public DateTime ValidTill { get; set; }
     }
 }
