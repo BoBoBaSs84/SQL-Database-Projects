@@ -16,6 +16,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Magic.Switch.Board", "Magic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic.Switch.Board.Tests", "Magic.Switch.Board.Tests\Magic.Switch.Board.Tests.csproj", "{684BE804-8965-43D2-B9B2-1A3204C479D7}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Magic.Switch.Board.tSQLt", "Magic.Switch.Board.tSQLt\Magic.Switch.Board.tSQLt.sqlproj", "{2E554F1F-7F6C-4084-9F9A-C7CE56C9B949}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,12 @@ Global
 		{684BE804-8965-43D2-B9B2-1A3204C479D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{684BE804-8965-43D2-B9B2-1A3204C479D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{684BE804-8965-43D2-B9B2-1A3204C479D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E554F1F-7F6C-4084-9F9A-C7CE56C9B949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E554F1F-7F6C-4084-9F9A-C7CE56C9B949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E554F1F-7F6C-4084-9F9A-C7CE56C9B949}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2E554F1F-7F6C-4084-9F9A-C7CE56C9B949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E554F1F-7F6C-4084-9F9A-C7CE56C9B949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E554F1F-7F6C-4084-9F9A-C7CE56C9B949}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

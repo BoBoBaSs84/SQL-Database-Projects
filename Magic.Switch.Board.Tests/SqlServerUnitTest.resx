@@ -159,8 +159,77 @@ SELECT @RC AS RC;
 
 </value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="private_ConfigurationInsertCountTest_TestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here to exercise the database object 
+that you want to test.
+
+To test a stored procedure, invoke it here by adding 
+an EXEC statement that has appropriate parameters.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+DECLARE @XML AS XML, @InsCnt INT;
+
+SELECT @XML = N'&lt;Configuration 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				Id="7e851016-2ab6-4b68-9b89-4f4746f10b0d"
+				Created="2022-09-14T09:34:40"
+				ApplicationVersion="1.0.0.12705"
+				ConfigurationVersion="1.0.0.12704"
+				xmlns="http://magic.switch.board.com/configuration/device"&gt;
+				&lt;/Configuration&gt;';
+
+EXECUTE [tSQLt].[FakeTable] '[private].[Configuration]';
+
+INSERT INTO [private].[Configuration]([XmlData])
+SELECT @XML;
+
+SELECT @InsCnt = COUNT(*) FROM [private].[Configuration];
+
+SELECT @InsCnt;
+</value>
   </data>
+  <metadata name="VerifyConfigurationInsertResult.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
+  <data name="private_ConfigurationInsertResultTest_TestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here to exercise the database object 
+that you want to test.
+
+To test a stored procedure, invoke it here by adding 
+an EXEC statement that has appropriate parameters.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/
+DECLARE @XML AS XML;
+
+SELECT @XML = N'&lt;Configuration 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				Id="7e851016-2ab6-4b68-9b89-4f4746f10b0d"
+				Created="2022-09-14T09:34:40"
+				ApplicationVersion="1.0.0.12705"
+				ConfigurationVersion="1.0.0.12704"
+				xmlns="http://magic.switch.board.com/configuration/device"&gt;
+				&lt;/Configuration&gt;';
+
+/* bad idea, when it comes to computed columns */
+--EXECUTE [tSQLt].[FakeTable] '[private].[Configuration]';
+
+INSERT INTO [private].[Configuration]([XmlData])
+SELECT @XML
+
+SELECT [XmlData], [ApplicationVersion], [ConfigurationVersion]
+FROM [private].[Configuration];</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

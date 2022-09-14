@@ -134,6 +134,7 @@
     <Folder Include="history\Tables" />
     <Folder Include="private\Scalar-valued Functions" />
     <Folder Include="publish" />
+    <Folder Include="application\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Schema\application.sql" />
@@ -143,14 +144,10 @@
     <Build Include="private\Scalar-valued Functions\private.GetApplicationVersion.sql" />
     <Build Include="private\Scalar-valued Functions\private.GetConfigurationVersion.sql" />
     <Build Include="history\Tables\history.Configuration.sql" />
+    <Build Include="application\Views\application.Configuration.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Key.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <ArtifactReference Include="..\tSQLt.2019.dacpac">
-      <HintPath>..\tSQLt.2019.dacpac</HintPath>
-      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
-    </ArtifactReference>
+    <None Include="publish\Magic.Switch.Board.publish.xml" />
   </ItemGroup>
 </Project>

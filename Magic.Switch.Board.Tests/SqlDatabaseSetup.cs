@@ -11,7 +11,11 @@ public class SqlDatabaseSetup
 	{
 		// Setup the test database based on setting in the
 		// configuration file
-		SqlDatabaseTestClass.TestService.DeployDatabaseProject();
-		SqlDatabaseTestClass.TestService.GenerateData();
+
+		//SqlDatabaseTestClass.TestService.DeployDatabaseProject();
+		//SqlDatabaseTestClass.TestService.GenerateData();
+		
+		MagicSwitchBoardTestService Service = new();
+		Service.DeployCompositeProject();
 	}
 }

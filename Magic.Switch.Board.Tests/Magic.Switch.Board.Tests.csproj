@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Transactions" />
   </ItemGroup>
@@ -58,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MagicSwitchBoardTestService.cs" />
     <Compile Include="SqlDatabaseSetup.cs" />
     <Compile Include="SqlServerUnitTest.cs">
       <SubType>Designer</SubType>
