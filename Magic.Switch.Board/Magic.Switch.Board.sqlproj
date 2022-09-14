@@ -133,6 +133,7 @@
     <Folder Include="private\Tables" />
     <Folder Include="history\Tables" />
     <Folder Include="private\Scalar-valued Functions" />
+    <Folder Include="publish" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Schema\application.sql" />
@@ -145,5 +146,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="..\tSQLt.2019.dacpac">
+      <HintPath>..\tSQLt.2019.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
   </ItemGroup>
 </Project>

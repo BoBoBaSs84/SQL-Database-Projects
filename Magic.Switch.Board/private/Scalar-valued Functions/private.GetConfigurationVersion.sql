@@ -5,7 +5,8 @@ AS
 BEGIN
 	DECLARE @ConfigurationVersion NVARCHAR(23) = NULL;
 
-	SELECT @ConfigurationVersion = @XML.value('(/Configuration/@ConfigurationVersion)[1]', 'NVARCHAR(23)');
+	WITH XMLNAMESPACES('http://magic.switch.board.com/configuration/device' as ns)
+	SELECT @ConfigurationVersion = @XML.value('(/ns:Configuration/@ConfigurationVersion)[1]', 'NVARCHAR(23)');
 
 	RETURN @ConfigurationVersion;
 END

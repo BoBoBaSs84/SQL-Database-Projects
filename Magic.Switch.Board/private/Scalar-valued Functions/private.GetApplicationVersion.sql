@@ -4,8 +4,9 @@ RETURNS NVARCHAR(23)
 AS
 BEGIN
 	DECLARE @ApplicationVersion NVARCHAR(23) = NULL;
-		
-	SELECT @ApplicationVersion = @XML.value('(/Configuration/@ApplicationVersion)[1]', 'NVARCHAR(23)');
+
+	WITH XMLNAMESPACES('http://magic.switch.board.com/configuration/device' as ns)
+	SELECT @ApplicationVersion = @XML.value('(/ns:Configuration/@ApplicationVersion)[1]', 'NVARCHAR(23)');
 
 	RETURN @ApplicationVersion;
 END
