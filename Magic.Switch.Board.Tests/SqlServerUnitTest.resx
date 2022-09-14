@@ -122,7 +122,15 @@
 DECLARE @RC AS NVARCHAR (23), @XML AS XML;
 
 SELECT @RC = NULL,
-       @XML = NULL;
+       @XML = N'&lt;Configuration 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+				Id="7e851016-2ab6-4b68-9b89-4f4746f10b0d" 
+				Created="2022-09-14T09:34:40" 
+				ApplicationVersion="1.0.0.12705" 
+				ConfigurationVersion="1.0.0.12704"
+				xmlns="http://magic.switch.board.com/configuration/device"&gt;
+				&lt;/Configuration&gt;';
 
 SELECT @RC = [private].[GetApplicationVersion](@XML);
 
@@ -135,7 +143,15 @@ SELECT @RC AS RC;
 DECLARE @RC AS NVARCHAR (23), @XML AS XML;
 
 SELECT @RC = NULL,
-       @XML = NULL;
+       @XML = N'&lt;Configuration 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+				Id="7e851016-2ab6-4b68-9b89-4f4746f10b0d" 
+				Created="2022-09-14T09:34:40" 
+				ApplicationVersion="1.0.0.12705" 
+				ConfigurationVersion="1.0.0.12704"
+				xmlns="http://magic.switch.board.com/configuration/device"&gt;
+				&lt;/Configuration&gt;';
 
 SELECT @RC = [private].[GetConfigurationVersion](@XML);
 

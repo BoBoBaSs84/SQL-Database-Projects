@@ -21,6 +21,7 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	public void TestInitialize()
 	{
 		base.InitializeTest();
+		var tc = base.TestContext;
 	}
 	[TestCleanup()]
 	public void TestCleanup()
@@ -38,15 +39,25 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	{
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction private_GetApplicationVersionTest_TestAction;
 		System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlServerUnitTest));
-		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.InconclusiveCondition inconclusiveCondition1;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction private_GetConfigurationVersionTest_TestAction;
-		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.InconclusiveCondition inconclusiveCondition2;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition ScalarValueConditionOne;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition ScalarValueConditionTwo;
 		this.private_GetApplicationVersionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.private_GetConfigurationVersionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		private_GetApplicationVersionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-		inconclusiveCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.InconclusiveCondition();
 		private_GetConfigurationVersionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-		inconclusiveCondition2 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.InconclusiveCondition();
+		ScalarValueConditionOne = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
+		ScalarValueConditionTwo = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
+		// 
+		// private_GetApplicationVersionTest_TestAction
+		// 
+		private_GetApplicationVersionTest_TestAction.Conditions.Add(ScalarValueConditionOne);
+		resources.ApplyResources(private_GetApplicationVersionTest_TestAction, "private_GetApplicationVersionTest_TestAction");
+		// 
+		// private_GetConfigurationVersionTest_TestAction
+		// 
+		private_GetConfigurationVersionTest_TestAction.Conditions.Add(ScalarValueConditionTwo);
+		resources.ApplyResources(private_GetConfigurationVersionTest_TestAction, "private_GetConfigurationVersionTest_TestAction");
 		// 
 		// private_GetApplicationVersionTestData
 		// 
@@ -54,31 +65,31 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		this.private_GetApplicationVersionTestData.PretestAction = null;
 		this.private_GetApplicationVersionTestData.TestAction = private_GetApplicationVersionTest_TestAction;
 		// 
-		// private_GetApplicationVersionTest_TestAction
-		// 
-		private_GetApplicationVersionTest_TestAction.Conditions.Add(inconclusiveCondition1);
-		resources.ApplyResources(private_GetApplicationVersionTest_TestAction, "private_GetApplicationVersionTest_TestAction");
-		// 
-		// inconclusiveCondition1
-		// 
-		inconclusiveCondition1.Enabled = true;
-		inconclusiveCondition1.Name = "inconclusiveCondition1";
-		// 
 		// private_GetConfigurationVersionTestData
 		// 
 		this.private_GetConfigurationVersionTestData.PosttestAction = null;
 		this.private_GetConfigurationVersionTestData.PretestAction = null;
 		this.private_GetConfigurationVersionTestData.TestAction = private_GetConfigurationVersionTest_TestAction;
 		// 
-		// private_GetConfigurationVersionTest_TestAction
+		// ScalarValueConditionOne
 		// 
-		private_GetConfigurationVersionTest_TestAction.Conditions.Add(inconclusiveCondition2);
-		resources.ApplyResources(private_GetConfigurationVersionTest_TestAction, "private_GetConfigurationVersionTest_TestAction");
+		ScalarValueConditionOne.ColumnNumber = 1;
+		ScalarValueConditionOne.Enabled = true;
+		ScalarValueConditionOne.ExpectedValue = "1.0.0.12705";
+		ScalarValueConditionOne.Name = "ScalarValueConditionOne";
+		ScalarValueConditionOne.NullExpected = false;
+		ScalarValueConditionOne.ResultSet = 1;
+		ScalarValueConditionOne.RowNumber = 1;
 		// 
-		// inconclusiveCondition2
+		// ScalarValueConditionTwo
 		// 
-		inconclusiveCondition2.Enabled = true;
-		inconclusiveCondition2.Name = "inconclusiveCondition2";
+		ScalarValueConditionTwo.ColumnNumber = 1;
+		ScalarValueConditionTwo.Enabled = true;
+		ScalarValueConditionTwo.ExpectedValue = "1.0.0.12704";
+		ScalarValueConditionTwo.Name = "ScalarValueConditionTwo";
+		ScalarValueConditionTwo.NullExpected = false;
+		ScalarValueConditionTwo.ResultSet = 1;
+		ScalarValueConditionTwo.RowNumber = 1;
 	}
 
 	#endregion

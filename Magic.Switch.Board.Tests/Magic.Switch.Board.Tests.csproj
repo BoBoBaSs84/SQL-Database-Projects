@@ -61,7 +61,6 @@
     <Compile Include="SqlServerUnitTest.cs">
       <SubType>Designer</SubType>
     </Compile>
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
