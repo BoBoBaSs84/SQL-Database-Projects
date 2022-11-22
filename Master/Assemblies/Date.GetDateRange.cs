@@ -34,13 +34,13 @@ public partial class Date
 		}
 		catch (Exception ex)
 		{
-			throw new AssemblyException($"Something went wrong within method '{nameof(GetDateRange)}'.", ex);
+			throw new AssemblyException($"Something went wrong within method: '{nameof(GetDateRange)}'", ex);
 		}
 	}
 
 	private static void FillGetDateRangeRows(object objDateData, out DateTime date)
 	{
-		DateData dateData = (DateData)objDateData;
+		DateData dateData = objDateData as DateData;
 		date = dateData.Date;
 	}
 

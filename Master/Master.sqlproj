@@ -142,6 +142,7 @@
   <ItemGroup>
     <Compile Include="Assemblies\Date.GetDateRange.cs" />
     <Compile Include="Assemblies\AssemblyException.cs" />
+    <Compile Include="Assemblies\Globalization.GetCulture.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
