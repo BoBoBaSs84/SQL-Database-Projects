@@ -18,3 +18,6 @@ GO
 EXEC sp_configure 'clr strict security', 1;
 RECONFIGURE;
 GO
+EXEC sp_configure 'show advanced options' , 0;
+RECONFIGURE;
+GO

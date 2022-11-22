@@ -9,7 +9,7 @@ public partial class Globalization
 	/// <summary>
 	/// Should return culture related information by land code name.
 	/// </summary>
-	/// <param name="cultureName"></param>
+	/// <param name="cultureName">This is the culture name. ("de-DE" or "en")</param>
 	/// <returns>Culture related information.</returns>
 	/// <exception cref="AssemblyException"></exception>
 	[SqlFunction(Name = nameof(GetCultureByName),
