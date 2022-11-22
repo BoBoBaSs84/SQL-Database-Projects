@@ -145,6 +145,7 @@
     <Compile Include="Assemblies\Globalization.GetCultureByName.cs" />
     <Compile Include="Assemblies\Globalization.GetCultureByCode.cs" />
     <Compile Include="Assemblies\Globalization.GetCulture.cs" />
+    <Compile Include="Assemblies\Globalization.GetCultures.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

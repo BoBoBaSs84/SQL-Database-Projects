@@ -9,13 +9,14 @@ public partial class Globalization
 	/// <summary>
 	/// Should return culture related information by land code name.
 	/// </summary>
+	/// <remarks>
+	/// If something goes wrong, the invariant culture gets returned.
+	/// </remarks>
 	/// <param name="cultureName">This is the culture name. ("de-DE" or "en")</param>
 	/// <returns>Culture related information.</returns>
 	/// <exception cref="AssemblyException"></exception>
-	[SqlFunction(Name = nameof(GetCultureByName),
-		FillRowMethodName = nameof(FillGetCultureRows),
-		DataAccess = DataAccessKind.Read,
-		TableDefinition = TableDefinition)]
+	[SqlFunction(Name = nameof(GetCultureByName), FillRowMethodName = nameof(FillGetCultureRows),
+		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
 	public static IEnumerable GetCultureByName([SqlFacet(MaxSize = 5)] SqlString cultureName)
 	{
 		try
