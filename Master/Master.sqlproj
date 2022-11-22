@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Magic.Switch.Board</Name>
+    <Name>Master</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{3d117666-2f59-42c0-bae3-4c150cf9667c}</ProjectGuid>
+    <ProjectGuid>{159d6ba4-a5a2-4485-9a11-959dea298d47}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Magic.Switch.Board</RootNamespace>
-    <AssemblyName>Magic.Switch.Board</AssemblyName>
+    <RootNamespace>Master</RootNamespace>
+    <AssemblyName>Master</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -22,14 +22,19 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
+    <TargetFrameworkProfile />
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
-    <QueryStoreCaptureMode>Auto</QueryStoreCaptureMode>
+    <AnsiNulls>True</AnsiNulls>
+    <QuotedIdentifier>True</QuotedIdentifier>
     <QueryStoreDesiredState>Off</QueryStoreDesiredState>
-    <QueryStoreFlushInterval>900</QueryStoreFlushInterval>
-    <QueryStoreStatsInterval>60</QueryStoreStatsInterval>
-    <QueryStoreMaxPlansPerQuery>200</QueryStoreMaxPlansPerQuery>
-    <QueryStoreStaleQueryThreshold>30</QueryStoreStaleQueryThreshold>
-    <QueryStoreMaxStorageSize>1000</QueryStoreMaxStorageSize>
+    <QueryStoreFlushInterval>0</QueryStoreFlushInterval>
+    <QueryStoreStatsInterval>0</QueryStoreStatsInterval>
+    <QueryStoreMaxPlansPerQuery>0</QueryStoreMaxPlansPerQuery>
+    <QueryStoreStaleQueryThreshold>0</QueryStoreStaleQueryThreshold>
+    <QueryStoreMaxStorageSize>0</QueryStoreMaxStorageSize>
     <DbScopedConfigLegacyCardinalityEstimation>Off</DbScopedConfigLegacyCardinalityEstimation>
     <DbScopedConfigMaxDOP>0</DbScopedConfigMaxDOP>
     <DbScopedConfigParameterSniffing>On</DbScopedConfigParameterSniffing>
@@ -42,7 +47,7 @@
     <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
     <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
     <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
-    <TargetRecoveryTimePeriod>60</TargetRecoveryTimePeriod>
+    <TargetRecoveryTimePeriod>0</TargetRecoveryTimePeriod>
     <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
     <IsChangeTrackingOn>False</IsChangeTrackingOn>
     <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
@@ -53,24 +58,22 @@
     <Trustworthy>True</Trustworthy>
     <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
     <PageVerify>CHECKSUM</PageVerify>
-    <ServiceBrokerOption>EnableBroker</ServiceBrokerOption>
+    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
     <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
     <Parameterization>SIMPLE</Parameterization>
-    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
+    <AllowSnapshotIsolation>True</AllowSnapshotIsolation>
     <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
-    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
+    <VardecimalStorageFormatOn>False</VardecimalStorageFormatOn>
     <SupplementalLoggingOn>False</SupplementalLoggingOn>
     <CompatibilityMode>150</CompatibilityMode>
     <AnsiNullDefault>False</AnsiNullDefault>
-    <AnsiNulls>True</AnsiNulls>
-    <AnsiPadding>True</AnsiPadding>
-    <AnsiWarnings>True</AnsiWarnings>
-    <ArithAbort>True</ArithAbort>
-    <ConcatNullYieldsNull>True</ConcatNullYieldsNull>
-    <QuotedIdentifier>True</QuotedIdentifier>
+    <AnsiPadding>False</AnsiPadding>
+    <AnsiWarnings>False</AnsiWarnings>
+    <ArithAbort>False</ArithAbort>
+    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
     <NumericRoundAbort>False</NumericRoundAbort>
     <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
-    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseChaining>True</DatabaseChaining>
     <DatabaseState>ONLINE</DatabaseState>
     <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
     <DefaultCursor>GLOBAL</DefaultCursor>
@@ -80,14 +83,11 @@
     <AutoUpdateStatistics>True</AutoUpdateStatistics>
     <TornPageDetection>False</TornPageDetection>
     <DatabaseAccess>MULTI_USER</DatabaseAccess>
-    <Recovery>FULL</Recovery>
-    <EnableFullTextSearch>True</EnableFullTextSearch>
+    <Recovery>SIMPLE</Recovery>
+    <EnableFullTextSearch>False</EnableFullTextSearch>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
-    <DefaultSchema>private</DefaultSchema>
-    <TargetFrameworkProfile />
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <PermissionSet>SAFE</PermissionSet>
+    <AssemblyOwner>dbo</AssemblyOwner>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -112,8 +112,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DataRetentionEnabled>False</DataRetentionEnabled>
-    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
-    <SqlCodeAnalysisRules>+!Microsoft.Rules.Data.SR0001;+!Microsoft.Rules.Data.SR0004;+!Microsoft.Rules.Data.SR0005;+!Microsoft.Rules.Data.SR0006;+!Microsoft.Rules.Data.SR0007;+!Microsoft.Rules.Data.SR0008;+!Microsoft.Rules.Data.SR0009;+!Microsoft.Rules.Data.SR0010;+!Microsoft.Rules.Data.SR0011;+!Microsoft.Rules.Data.SR0012;+!Microsoft.Rules.Data.SR0013;+!Microsoft.Rules.Data.SR0014;+!Microsoft.Rules.Data.SR0015;+!Microsoft.Rules.Data.SR0016</SqlCodeAnalysisRules>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -125,29 +123,30 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Security" />
-    <Folder Include="Security\Schema" />
-    <Folder Include="application" />
-    <Folder Include="history" />
-    <Folder Include="private" />
-    <Folder Include="private\Tables" />
-    <Folder Include="history\Tables" />
-    <Folder Include="private\Scalar-valued Functions" />
-    <Folder Include="publish" />
-    <Folder Include="application\Views" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Security\Schema\application.sql" />
-    <Build Include="Security\Schema\history.sql" />
-    <Build Include="Security\Schema\private.sql" />
-    <Build Include="private\Tables\private.Configuration.sql" />
-    <Build Include="private\Scalar-valued Functions\private.GetApplicationVersion.sql" />
-    <Build Include="private\Scalar-valued Functions\private.GetConfigurationVersion.sql" />
-    <Build Include="history\Tables\history.Configuration.sql" />
-    <Build Include="application\Views\application.Configuration.sql" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="Deployment" />
+    <Folder Include="Publish" />
+    <Folder Include="Assemblies" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Key.snk" />
-    <None Include="publish\Magic.Switch.Board.publish.xml" />
+    <None Include="Publish\Master.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\dbo.Calendar.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Deployment\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assemblies\Date.GetDateRange.cs" />
+    <Compile Include="Assemblies\AssemblyException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
 </Project>
