@@ -10,23 +10,17 @@ public partial class Globalization
 	/// </summary>
 	/// <returns>Culture related information.</returns>
 	/// <exception cref="AssemblyException"></exception>
-	[SqlFunction(Name = nameof(GetCultures), FillRowMethodName = nameof(FillGetCultureRows),
+	[SqlFunction(Name = nameof(GetAllCultures), FillRowMethodName = nameof(FillGetCultureRows),
 		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
-	public static IEnumerable GetCultures()
+	public static IEnumerable GetAllCultures()
 	{
 		try
 		{
-			ArrayList result = new();
-			CultureInfo[] cultureInfo = CultureInfo.GetCultures(CultureTypes.AllCultures);
-
-			foreach (CultureInfo culture in cultureInfo)
-				_ = result.Add(new CultureData(culture.Name));
-
-			return result;
+			return GetCultures(CultureTypes.AllCultures);
 		}
 		catch (Exception ex)
 		{
-			throw new AssemblyException($"Something went wrong within method: '{nameof(GetCultures)}'", ex);
+			throw new AssemblyException($"Something went wrong within method: '{nameof(GetAllCultures)}'", ex);
 		}
 	}
 }

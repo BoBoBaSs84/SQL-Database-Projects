@@ -146,12 +146,16 @@
     <Compile Include="Assemblies\Globalization.GetCultureByName.cs" />
     <Compile Include="Assemblies\Globalization.GetCultureByCode.cs" />
     <Compile Include="Assemblies\Globalization.cs" />
-    <Compile Include="Assemblies\Globalization.GetCultures.cs" />
+    <Compile Include="Assemblies\Globalization.GetAllCultures.cs" />
+    <Compile Include="Assemblies\Globalization.GetNeutralCultures.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Deployment\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

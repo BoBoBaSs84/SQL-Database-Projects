@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 
 public partial class Globalization
@@ -13,7 +15,7 @@ public partial class Globalization
 		cultureName = cultureData.TextInfo.CultureName;
 		nativeName = cultureData.NativeName;
 		displayName = cultureData.DisplayName;
-		englishName = cultureData.EnglishName;		
+		englishName = cultureData.EnglishName;
 		threeLetterISO = cultureData.ThreeLetterISOLanguageName;
 		twoLetterISO = cultureData.TwoLetterISOLanguageName;
 		isNeutralCulture = cultureData.IsNeutralCulture;
@@ -26,5 +28,16 @@ public partial class Globalization
 		public CultureData(string name) : base(name)
 		{
 		}
+	}
+
+	private static IEnumerable GetCultures(CultureTypes cultureTypes)
+	{
+		List<CultureInfo> result = new();
+		CultureInfo[] cultureInfo = CultureInfo.GetCultures(cultureTypes);
+
+		foreach (CultureInfo culture in cultureInfo)
+			result.Add(new CultureData(culture.Name));
+
+		return result;
 	}
 }
