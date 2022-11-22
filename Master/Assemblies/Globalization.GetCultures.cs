@@ -20,7 +20,7 @@ public partial class Globalization
 			CultureInfo[] cultureInfo = CultureInfo.GetCultures(CultureTypes.AllCultures);
 
 			foreach (CultureInfo culture in cultureInfo)
-				_ = result.Add(culture);
+				_ = result.Add(culture.Name);
 
 			return result;
 		}

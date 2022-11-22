@@ -10,7 +10,7 @@ internal class Program
 {
 	static void Main(string[] args)
 	{
-		CultureInfo cultureInfo = CultureInfo.GetCultureInfo("en");
+		CultureInfo[] cultureInfo = CultureInfo.GetCultures(CultureTypes.AllCultures);
 		Console.ReadKey();
 	}
 }
