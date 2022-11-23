@@ -14,3 +14,4 @@
 	, [WeekDayName] AS DATENAME(WEEKDAY, [Date])
 	, [MonthName] AS DATENAME(MONTH, [Date])
 	);
+GO

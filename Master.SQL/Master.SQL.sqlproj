@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Master</Name>
+    <Name>Master.SQL</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{159d6ba4-a5a2-4485-9a11-959dea298d47}</ProjectGuid>
@@ -11,7 +11,7 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Master</RootNamespace>
+    <RootNamespace>Master.SQL</RootNamespace>
     <AssemblyName>Master.CLR</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
@@ -114,6 +114,7 @@
     <DataRetentionEnabled>False</DataRetentionEnabled>
     <DocumentationFile>
     </DocumentationFile>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
