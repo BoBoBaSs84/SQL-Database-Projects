@@ -6,7 +6,6 @@ namespace Master.SQL.Tests;
 [TestClass()]
 public class SqlDatabaseSetup
 {
-
 	[AssemblyInitialize()]
 	public static void InitializeAssembly(TestContext ctx)
 	{

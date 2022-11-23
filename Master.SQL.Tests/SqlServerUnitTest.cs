@@ -1,31 +1,27 @@
 ﻿using Microsoft.Data.Tools.Schema.Sql.UnitTesting;
-using Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
-using System.Text;
+using System.Transactions;
 
 namespace Master.SQL.Tests;
 [TestClass()]
 public class SqlServerUnitTest : SqlDatabaseTestClass
 {
+	private TransactionScope transaction;
 
-	public SqlServerUnitTest()
-	{
-		InitializeComponent();
-	}
+	public SqlServerUnitTest() => InitializeComponent();
 
 	[TestInitialize()]
 	public void TestInitialize()
 	{
+		transaction = new();
 		base.InitializeTest();
 	}
+
 	[TestCleanup()]
 	public void TestCleanup()
 	{
 		base.CleanupTest();
+		transaction.Dispose();
 	}
 
 	#region Designer support code
@@ -56,18 +52,18 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_GetDateRangeArgumentExceptionTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_GetDateRangeNullTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetDateRangeScalarValueCondition;
-		this.dbo_GetAllCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetCultureByNameSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetDateRangeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetNeutralCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetCultureByCodeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetCultureByNameSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetCultureByNameUnknownLocaleTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetDateRangeArgumentExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.dbo_GetDateRangeNullTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetAllCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetCultureByNameSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetDateRangeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetNeutralCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetCultureByCodeSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetCultureByCodeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetCultureByNameSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetCultureByNameUnknownLocaleTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetCultureByNameCultureNotFoundExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetDateRangeArgumentExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		dbo_GetDateRangeNullTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		dbo_GetAllCulturesSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetAllCulturesScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
 		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
@@ -187,75 +183,75 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		// 
 		// dbo_GetAllCulturesSuccessTestData
 		// 
-		this.dbo_GetAllCulturesSuccessTestData.PosttestAction = null;
-		this.dbo_GetAllCulturesSuccessTestData.PretestAction = null;
-		this.dbo_GetAllCulturesSuccessTestData.TestAction = dbo_GetAllCulturesSuccessTest_TestAction;
+		dbo_GetAllCulturesSuccessTestData.PosttestAction = null;
+		dbo_GetAllCulturesSuccessTestData.PretestAction = null;
+		dbo_GetAllCulturesSuccessTestData.TestAction = dbo_GetAllCulturesSuccessTest_TestAction;
 		// 
 		// dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData
 		// 
-		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PosttestAction = null;
-		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PretestAction = null;
-		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.TestAction = dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction;
+		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PosttestAction = null;
+		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PretestAction = null;
+		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.TestAction = dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction;
 		// 
 		// dbo_GetCultureByNameSqlNullValueExceptionTestData
 		// 
-		this.dbo_GetCultureByNameSqlNullValueExceptionTestData.PosttestAction = null;
-		this.dbo_GetCultureByNameSqlNullValueExceptionTestData.PretestAction = null;
-		this.dbo_GetCultureByNameSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByNameSqlNullValueExceptionTest_TestAction;
+		dbo_GetCultureByNameSqlNullValueExceptionTestData.PosttestAction = null;
+		dbo_GetCultureByNameSqlNullValueExceptionTestData.PretestAction = null;
+		dbo_GetCultureByNameSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByNameSqlNullValueExceptionTest_TestAction;
 		// 
 		// dbo_GetDateRangeSuccessTestData
 		// 
-		this.dbo_GetDateRangeSuccessTestData.PosttestAction = null;
-		this.dbo_GetDateRangeSuccessTestData.PretestAction = null;
-		this.dbo_GetDateRangeSuccessTestData.TestAction = dbo_GetDateRangeSuccessTest_TestAction;
+		dbo_GetDateRangeSuccessTestData.PosttestAction = null;
+		dbo_GetDateRangeSuccessTestData.PretestAction = null;
+		dbo_GetDateRangeSuccessTestData.TestAction = dbo_GetDateRangeSuccessTest_TestAction;
 		// 
 		// dbo_GetNeutralCulturesSuccessTestData
 		// 
-		this.dbo_GetNeutralCulturesSuccessTestData.PosttestAction = null;
-		this.dbo_GetNeutralCulturesSuccessTestData.PretestAction = null;
-		this.dbo_GetNeutralCulturesSuccessTestData.TestAction = dbo_GetNeutralCulturesSuccessTest_TestAction;
+		dbo_GetNeutralCulturesSuccessTestData.PosttestAction = null;
+		dbo_GetNeutralCulturesSuccessTestData.PretestAction = null;
+		dbo_GetNeutralCulturesSuccessTestData.TestAction = dbo_GetNeutralCulturesSuccessTest_TestAction;
 		// 
 		// dbo_GetCultureByCodeSqlNullValueExceptionTestData
 		// 
-		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData.PosttestAction = null;
-		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData.PretestAction = null;
-		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByCodeSqlNullValueExceptionTest_TestAction;
+		dbo_GetCultureByCodeSqlNullValueExceptionTestData.PosttestAction = null;
+		dbo_GetCultureByCodeSqlNullValueExceptionTestData.PretestAction = null;
+		dbo_GetCultureByCodeSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByCodeSqlNullValueExceptionTest_TestAction;
 		// 
 		// dbo_GetCultureByCodeSuccessTestData
 		// 
-		this.dbo_GetCultureByCodeSuccessTestData.PosttestAction = null;
-		this.dbo_GetCultureByCodeSuccessTestData.PretestAction = null;
-		this.dbo_GetCultureByCodeSuccessTestData.TestAction = dbo_GetCultureByCodeSuccessTest_TestAction;
+		dbo_GetCultureByCodeSuccessTestData.PosttestAction = null;
+		dbo_GetCultureByCodeSuccessTestData.PretestAction = null;
+		dbo_GetCultureByCodeSuccessTestData.TestAction = dbo_GetCultureByCodeSuccessTest_TestAction;
 		// 
 		// dbo_GetCultureByNameSuccessTestData
 		// 
-		this.dbo_GetCultureByNameSuccessTestData.PosttestAction = null;
-		this.dbo_GetCultureByNameSuccessTestData.PretestAction = null;
-		this.dbo_GetCultureByNameSuccessTestData.TestAction = dbo_GetCultureByNameSuccessTest_TestAction;
+		dbo_GetCultureByNameSuccessTestData.PosttestAction = null;
+		dbo_GetCultureByNameSuccessTestData.PretestAction = null;
+		dbo_GetCultureByNameSuccessTestData.TestAction = dbo_GetCultureByNameSuccessTest_TestAction;
 		// 
 		// dbo_GetCultureByNameUnknownLocaleTestData
 		// 
-		this.dbo_GetCultureByNameUnknownLocaleTestData.PosttestAction = null;
-		this.dbo_GetCultureByNameUnknownLocaleTestData.PretestAction = null;
-		this.dbo_GetCultureByNameUnknownLocaleTestData.TestAction = dbo_GetCultureByNameUnknownLocaleTest_TestAction;
+		dbo_GetCultureByNameUnknownLocaleTestData.PosttestAction = null;
+		dbo_GetCultureByNameUnknownLocaleTestData.PretestAction = null;
+		dbo_GetCultureByNameUnknownLocaleTestData.TestAction = dbo_GetCultureByNameUnknownLocaleTest_TestAction;
 		// 
 		// dbo_GetCultureByNameCultureNotFoundExceptionTestData
 		// 
-		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData.PosttestAction = null;
-		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData.PretestAction = null;
-		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData.TestAction = dbo_GetCultureByNameCultureNotFoundExceptionTest_TestAction;
+		dbo_GetCultureByNameCultureNotFoundExceptionTestData.PosttestAction = null;
+		dbo_GetCultureByNameCultureNotFoundExceptionTestData.PretestAction = null;
+		dbo_GetCultureByNameCultureNotFoundExceptionTestData.TestAction = dbo_GetCultureByNameCultureNotFoundExceptionTest_TestAction;
 		// 
 		// dbo_GetDateRangeArgumentExceptionTestData
 		// 
-		this.dbo_GetDateRangeArgumentExceptionTestData.PosttestAction = null;
-		this.dbo_GetDateRangeArgumentExceptionTestData.PretestAction = null;
-		this.dbo_GetDateRangeArgumentExceptionTestData.TestAction = dbo_GetDateRangeArgumentExceptionTest_TestAction;
+		dbo_GetDateRangeArgumentExceptionTestData.PosttestAction = null;
+		dbo_GetDateRangeArgumentExceptionTestData.PretestAction = null;
+		dbo_GetDateRangeArgumentExceptionTestData.TestAction = dbo_GetDateRangeArgumentExceptionTest_TestAction;
 		// 
 		// dbo_GetDateRangeNullTestData
 		// 
-		this.dbo_GetDateRangeNullTestData.PosttestAction = null;
-		this.dbo_GetDateRangeNullTestData.PretestAction = null;
-		this.dbo_GetDateRangeNullTestData.TestAction = dbo_GetDateRangeNullTest_TestAction;
+		dbo_GetDateRangeNullTestData.PosttestAction = null;
+		dbo_GetDateRangeNullTestData.PretestAction = null;
+		dbo_GetDateRangeNullTestData.TestAction = dbo_GetDateRangeNullTest_TestAction;
 		// 
 		// dbo_GetDateRangeNullTest_TestAction
 		// 
@@ -293,24 +289,24 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	[TestMethod()]
 	public void dbo_GetAllCulturesSuccessTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetAllCulturesSuccessTestData;
+		SqlDatabaseTestActions testActions = dbo_GetAllCulturesSuccessTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 
@@ -318,24 +314,24 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
 	public void dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData;
+		SqlDatabaseTestActions testActions = dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 
@@ -343,165 +339,165 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
 	public void dbo_GetCultureByNameSqlNullValueExceptionTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetCultureByNameSqlNullValueExceptionTestData;
+		SqlDatabaseTestActions testActions = dbo_GetCultureByNameSqlNullValueExceptionTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 
 	[TestMethod()]
 	public void dbo_GetDateRangeSuccessTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetDateRangeSuccessTestData;
+		SqlDatabaseTestActions testActions = dbo_GetDateRangeSuccessTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 
 	[TestMethod()]
 	public void dbo_GetNeutralCulturesSuccessTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetNeutralCulturesSuccessTestData;
+		SqlDatabaseTestActions testActions = dbo_GetNeutralCulturesSuccessTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 	[TestMethod()]
 	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
 	public void dbo_GetCultureByCodeSqlNullValueExceptionTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetCultureByCodeSqlNullValueExceptionTestData;
+		SqlDatabaseTestActions testActions = dbo_GetCultureByCodeSqlNullValueExceptionTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 	[TestMethod()]
 	public void dbo_GetCultureByCodeSuccessTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetCultureByCodeSuccessTestData;
+		SqlDatabaseTestActions testActions = dbo_GetCultureByCodeSuccessTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 	[TestMethod()]
 	public void dbo_GetCultureByNameSuccessTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetCultureByNameSuccessTestData;
+		SqlDatabaseTestActions testActions = dbo_GetCultureByNameSuccessTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 	[TestMethod()]
 	public void dbo_GetCultureByNameUnknownLocaleTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetCultureByNameUnknownLocaleTestData;
+		SqlDatabaseTestActions testActions = dbo_GetCultureByNameUnknownLocaleTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 
@@ -509,71 +505,71 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
 	public void dbo_GetCultureByNameCultureNotFoundExceptionTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetCultureByNameCultureNotFoundExceptionTestData;
+		SqlDatabaseTestActions testActions = dbo_GetCultureByNameCultureNotFoundExceptionTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 	[TestMethod()]
 	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
 	public void dbo_GetDateRangeArgumentExceptionTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetDateRangeArgumentExceptionTestData;
+		SqlDatabaseTestActions testActions = dbo_GetDateRangeArgumentExceptionTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 	[TestMethod()]
 	public void dbo_GetDateRangeNullTest()
 	{
-		SqlDatabaseTestActions testActions = this.dbo_GetDateRangeNullTestData;
+		SqlDatabaseTestActions testActions = dbo_GetDateRangeNullTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		SqlExecutionResult[] pretestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PretestAction);
 		try
 		{
 			// Execute the test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+			SqlExecutionResult[] testResults = TestService.Execute(ExecutionContext, PrivilegedContext, testActions.TestAction);
 		}
 		finally
 		{
 			// Execute the post-test script
 			// 
 			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
 
