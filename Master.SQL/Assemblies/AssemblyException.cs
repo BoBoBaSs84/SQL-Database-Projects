@@ -3,13 +3,13 @@ using System;
 /// <summary>
 /// This is the custom sql server clr assembly exception.
 /// </summary>
-internal class AssemblyException : Exception
+internal sealed class SqlClrException : Exception
 {
 	/// <summary>
 	/// The standard constructor.
 	/// </summary>
 	/// <param name="message"></param>
-	public AssemblyException(string message) : base(message)
+	public SqlClrException(string message) : base(message)
 	{
 	}
 
@@ -18,7 +18,7 @@ internal class AssemblyException : Exception
 	/// </summary>
 	/// <param name="message"></param>
 	/// <param name="innerException"></param>
-	public AssemblyException(string message, Exception innerException) : base(message, innerException)
+	public SqlClrException(string message, Exception innerException) : base(message, innerException)
 	{
 	}
 }

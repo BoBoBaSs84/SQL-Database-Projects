@@ -218,6 +218,9 @@ SELECT *
 FROM [dbo].[GetCultureByName](@cultureName);
 </value>
   </data>
+  <metadata name="GetCultureByNameChecksumCondition.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
   <data name="dbo_GetCultureByNameCultureNotFoundExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByName
 DECLARE @cultureName NVARCHAR(5) = NULL;
@@ -248,6 +251,20 @@ DECLARE @StartDate AS DATETIME
 SELECT *
 FROM [dbo].[GetDateRange](@StartDate, @EndDate);
 </value>
+  </data>
+  <data name="dbo_GetLangageCodeIdentifierSuccessTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.GetLangageCodeIdentifier
+DECLARE @CultureName NVARCHAR(15) = NULL;
+
+SET @CultureName = 'en-GB';
+
+SELECT [dbo].[GetLangageCodeIdentifier](@CultureName);</value>
+  </data>
+  <data name="dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.GetLangageCodeIdentifier
+DECLARE @CultureName NVARCHAR(15) = NULL;
+
+SELECT [dbo].[GetLangageCodeIdentifier](@CultureName);</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

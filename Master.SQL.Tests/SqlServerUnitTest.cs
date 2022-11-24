@@ -52,18 +52,23 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_GetDateRangeArgumentExceptionTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_GetDateRangeNullTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetDateRangeScalarValueCondition;
-		dbo_GetAllCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetCultureByNameSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetDateRangeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetNeutralCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetCultureByCodeSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetCultureByCodeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetCultureByNameSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetCultureByNameUnknownLocaleTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetCultureByNameCultureNotFoundExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetDateRangeArgumentExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		dbo_GetDateRangeNullTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_GetLangageCodeIdentifierSuccessTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetLangageCodeIdentifierScalarValueCondition;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction;
+		this.dbo_GetAllCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetCultureByNameSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetDateRangeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetNeutralCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetCultureByCodeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetCultureByNameSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetCultureByNameUnknownLocaleTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetDateRangeArgumentExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetDateRangeNullTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetLangageCodeIdentifierSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.dbo_GetLangageCodeIdentifierSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		dbo_GetAllCulturesSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetAllCulturesScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
 		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
@@ -83,6 +88,9 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		dbo_GetDateRangeArgumentExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		dbo_GetDateRangeNullTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetDateRangeScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
+		dbo_GetLangageCodeIdentifierSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		GetLangageCodeIdentifierScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
+		dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		// 
 		// dbo_GetAllCulturesSuccessTest_TestAction
 		// 
@@ -181,78 +189,6 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		// 
 		resources.ApplyResources(dbo_GetDateRangeArgumentExceptionTest_TestAction, "dbo_GetDateRangeArgumentExceptionTest_TestAction");
 		// 
-		// dbo_GetAllCulturesSuccessTestData
-		// 
-		dbo_GetAllCulturesSuccessTestData.PosttestAction = null;
-		dbo_GetAllCulturesSuccessTestData.PretestAction = null;
-		dbo_GetAllCulturesSuccessTestData.TestAction = dbo_GetAllCulturesSuccessTest_TestAction;
-		// 
-		// dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData
-		// 
-		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PosttestAction = null;
-		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PretestAction = null;
-		dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.TestAction = dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction;
-		// 
-		// dbo_GetCultureByNameSqlNullValueExceptionTestData
-		// 
-		dbo_GetCultureByNameSqlNullValueExceptionTestData.PosttestAction = null;
-		dbo_GetCultureByNameSqlNullValueExceptionTestData.PretestAction = null;
-		dbo_GetCultureByNameSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByNameSqlNullValueExceptionTest_TestAction;
-		// 
-		// dbo_GetDateRangeSuccessTestData
-		// 
-		dbo_GetDateRangeSuccessTestData.PosttestAction = null;
-		dbo_GetDateRangeSuccessTestData.PretestAction = null;
-		dbo_GetDateRangeSuccessTestData.TestAction = dbo_GetDateRangeSuccessTest_TestAction;
-		// 
-		// dbo_GetNeutralCulturesSuccessTestData
-		// 
-		dbo_GetNeutralCulturesSuccessTestData.PosttestAction = null;
-		dbo_GetNeutralCulturesSuccessTestData.PretestAction = null;
-		dbo_GetNeutralCulturesSuccessTestData.TestAction = dbo_GetNeutralCulturesSuccessTest_TestAction;
-		// 
-		// dbo_GetCultureByCodeSqlNullValueExceptionTestData
-		// 
-		dbo_GetCultureByCodeSqlNullValueExceptionTestData.PosttestAction = null;
-		dbo_GetCultureByCodeSqlNullValueExceptionTestData.PretestAction = null;
-		dbo_GetCultureByCodeSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByCodeSqlNullValueExceptionTest_TestAction;
-		// 
-		// dbo_GetCultureByCodeSuccessTestData
-		// 
-		dbo_GetCultureByCodeSuccessTestData.PosttestAction = null;
-		dbo_GetCultureByCodeSuccessTestData.PretestAction = null;
-		dbo_GetCultureByCodeSuccessTestData.TestAction = dbo_GetCultureByCodeSuccessTest_TestAction;
-		// 
-		// dbo_GetCultureByNameSuccessTestData
-		// 
-		dbo_GetCultureByNameSuccessTestData.PosttestAction = null;
-		dbo_GetCultureByNameSuccessTestData.PretestAction = null;
-		dbo_GetCultureByNameSuccessTestData.TestAction = dbo_GetCultureByNameSuccessTest_TestAction;
-		// 
-		// dbo_GetCultureByNameUnknownLocaleTestData
-		// 
-		dbo_GetCultureByNameUnknownLocaleTestData.PosttestAction = null;
-		dbo_GetCultureByNameUnknownLocaleTestData.PretestAction = null;
-		dbo_GetCultureByNameUnknownLocaleTestData.TestAction = dbo_GetCultureByNameUnknownLocaleTest_TestAction;
-		// 
-		// dbo_GetCultureByNameCultureNotFoundExceptionTestData
-		// 
-		dbo_GetCultureByNameCultureNotFoundExceptionTestData.PosttestAction = null;
-		dbo_GetCultureByNameCultureNotFoundExceptionTestData.PretestAction = null;
-		dbo_GetCultureByNameCultureNotFoundExceptionTestData.TestAction = dbo_GetCultureByNameCultureNotFoundExceptionTest_TestAction;
-		// 
-		// dbo_GetDateRangeArgumentExceptionTestData
-		// 
-		dbo_GetDateRangeArgumentExceptionTestData.PosttestAction = null;
-		dbo_GetDateRangeArgumentExceptionTestData.PretestAction = null;
-		dbo_GetDateRangeArgumentExceptionTestData.TestAction = dbo_GetDateRangeArgumentExceptionTest_TestAction;
-		// 
-		// dbo_GetDateRangeNullTestData
-		// 
-		dbo_GetDateRangeNullTestData.PosttestAction = null;
-		dbo_GetDateRangeNullTestData.PretestAction = null;
-		dbo_GetDateRangeNullTestData.TestAction = dbo_GetDateRangeNullTest_TestAction;
-		// 
 		// dbo_GetDateRangeNullTest_TestAction
 		// 
 		dbo_GetDateRangeNullTest_TestAction.Conditions.Add(GetDateRangeScalarValueCondition);
@@ -267,6 +203,109 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		GetDateRangeScalarValueCondition.NullExpected = false;
 		GetDateRangeScalarValueCondition.ResultSet = 1;
 		GetDateRangeScalarValueCondition.RowNumber = 1;
+		// 
+		// dbo_GetAllCulturesSuccessTestData
+		// 
+		this.dbo_GetAllCulturesSuccessTestData.PosttestAction = null;
+		this.dbo_GetAllCulturesSuccessTestData.PretestAction = null;
+		this.dbo_GetAllCulturesSuccessTestData.TestAction = dbo_GetAllCulturesSuccessTest_TestAction;
+		// 
+		// dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData
+		// 
+		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PosttestAction = null;
+		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.PretestAction = null;
+		this.dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData.TestAction = dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction;
+		// 
+		// dbo_GetCultureByNameSqlNullValueExceptionTestData
+		// 
+		this.dbo_GetCultureByNameSqlNullValueExceptionTestData.PosttestAction = null;
+		this.dbo_GetCultureByNameSqlNullValueExceptionTestData.PretestAction = null;
+		this.dbo_GetCultureByNameSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByNameSqlNullValueExceptionTest_TestAction;
+		// 
+		// dbo_GetDateRangeSuccessTestData
+		// 
+		this.dbo_GetDateRangeSuccessTestData.PosttestAction = null;
+		this.dbo_GetDateRangeSuccessTestData.PretestAction = null;
+		this.dbo_GetDateRangeSuccessTestData.TestAction = dbo_GetDateRangeSuccessTest_TestAction;
+		// 
+		// dbo_GetNeutralCulturesSuccessTestData
+		// 
+		this.dbo_GetNeutralCulturesSuccessTestData.PosttestAction = null;
+		this.dbo_GetNeutralCulturesSuccessTestData.PretestAction = null;
+		this.dbo_GetNeutralCulturesSuccessTestData.TestAction = dbo_GetNeutralCulturesSuccessTest_TestAction;
+		// 
+		// dbo_GetCultureByCodeSqlNullValueExceptionTestData
+		// 
+		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData.PosttestAction = null;
+		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData.PretestAction = null;
+		this.dbo_GetCultureByCodeSqlNullValueExceptionTestData.TestAction = dbo_GetCultureByCodeSqlNullValueExceptionTest_TestAction;
+		// 
+		// dbo_GetCultureByCodeSuccessTestData
+		// 
+		this.dbo_GetCultureByCodeSuccessTestData.PosttestAction = null;
+		this.dbo_GetCultureByCodeSuccessTestData.PretestAction = null;
+		this.dbo_GetCultureByCodeSuccessTestData.TestAction = dbo_GetCultureByCodeSuccessTest_TestAction;
+		// 
+		// dbo_GetCultureByNameSuccessTestData
+		// 
+		this.dbo_GetCultureByNameSuccessTestData.PosttestAction = null;
+		this.dbo_GetCultureByNameSuccessTestData.PretestAction = null;
+		this.dbo_GetCultureByNameSuccessTestData.TestAction = dbo_GetCultureByNameSuccessTest_TestAction;
+		// 
+		// dbo_GetCultureByNameUnknownLocaleTestData
+		// 
+		this.dbo_GetCultureByNameUnknownLocaleTestData.PosttestAction = null;
+		this.dbo_GetCultureByNameUnknownLocaleTestData.PretestAction = null;
+		this.dbo_GetCultureByNameUnknownLocaleTestData.TestAction = dbo_GetCultureByNameUnknownLocaleTest_TestAction;
+		// 
+		// dbo_GetCultureByNameCultureNotFoundExceptionTestData
+		// 
+		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData.PosttestAction = null;
+		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData.PretestAction = null;
+		this.dbo_GetCultureByNameCultureNotFoundExceptionTestData.TestAction = dbo_GetCultureByNameCultureNotFoundExceptionTest_TestAction;
+		// 
+		// dbo_GetDateRangeArgumentExceptionTestData
+		// 
+		this.dbo_GetDateRangeArgumentExceptionTestData.PosttestAction = null;
+		this.dbo_GetDateRangeArgumentExceptionTestData.PretestAction = null;
+		this.dbo_GetDateRangeArgumentExceptionTestData.TestAction = dbo_GetDateRangeArgumentExceptionTest_TestAction;
+		// 
+		// dbo_GetDateRangeNullTestData
+		// 
+		this.dbo_GetDateRangeNullTestData.PosttestAction = null;
+		this.dbo_GetDateRangeNullTestData.PretestAction = null;
+		this.dbo_GetDateRangeNullTestData.TestAction = dbo_GetDateRangeNullTest_TestAction;
+		// 
+		// dbo_GetLangageCodeIdentifierSuccessTestData
+		// 
+		this.dbo_GetLangageCodeIdentifierSuccessTestData.PosttestAction = null;
+		this.dbo_GetLangageCodeIdentifierSuccessTestData.PretestAction = null;
+		this.dbo_GetLangageCodeIdentifierSuccessTestData.TestAction = dbo_GetLangageCodeIdentifierSuccessTest_TestAction;
+		// 
+		// dbo_GetLangageCodeIdentifierSuccessTest_TestAction
+		// 
+		dbo_GetLangageCodeIdentifierSuccessTest_TestAction.Conditions.Add(GetLangageCodeIdentifierScalarValueCondition);
+		resources.ApplyResources(dbo_GetLangageCodeIdentifierSuccessTest_TestAction, "dbo_GetLangageCodeIdentifierSuccessTest_TestAction");
+		// 
+		// GetLangageCodeIdentifierScalarValueCondition
+		// 
+		GetLangageCodeIdentifierScalarValueCondition.ColumnNumber = 1;
+		GetLangageCodeIdentifierScalarValueCondition.Enabled = true;
+		GetLangageCodeIdentifierScalarValueCondition.ExpectedValue = "2057";
+		GetLangageCodeIdentifierScalarValueCondition.Name = "GetLangageCodeIdentifierScalarValueCondition";
+		GetLangageCodeIdentifierScalarValueCondition.NullExpected = false;
+		GetLangageCodeIdentifierScalarValueCondition.ResultSet = 1;
+		GetLangageCodeIdentifierScalarValueCondition.RowNumber = 1;
+		// 
+		// dbo_GetLangageCodeIdentifierSqlNullValueExceptionTestData
+		// 
+		this.dbo_GetLangageCodeIdentifierSqlNullValueExceptionTestData.PosttestAction = null;
+		this.dbo_GetLangageCodeIdentifierSqlNullValueExceptionTestData.PretestAction = null;
+		this.dbo_GetLangageCodeIdentifierSqlNullValueExceptionTestData.TestAction = dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction;
+		// 
+		// dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction
+		// 
+		resources.ApplyResources(dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction, "dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction");
 	}
 
 	#endregion
@@ -572,12 +611,54 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+	[TestMethod()]
+	public void dbo_GetLangageCodeIdentifierSuccessTest()
+	{
+		SqlDatabaseTestActions testActions = this.dbo_GetLangageCodeIdentifierSuccessTestData;
+		// Execute the pre-test script
+		// 
+		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		try
+		{
+			// Execute the test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+		}
+		finally
+		{
+			// Execute the post-test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+		}
+	}
 
-
-
-
-
-
+	[TestMethod()]
+	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 2)]
+	public void dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest()
+	{
+		SqlDatabaseTestActions testActions = this.dbo_GetLangageCodeIdentifierSqlNullValueExceptionTestData;
+		// Execute the pre-test script
+		// 
+		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		try
+		{
+			// Execute the test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+		}
+		finally
+		{
+			// Execute the post-test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+		}
+	}
 
 	private SqlDatabaseTestActions dbo_GetAllCulturesSuccessTestData;
 	private SqlDatabaseTestActions dbo_GetCultureByCodeArgumentOutOfRangeExceptionTestData;
@@ -591,4 +672,6 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	private SqlDatabaseTestActions dbo_GetCultureByNameCultureNotFoundExceptionTestData;
 	private SqlDatabaseTestActions dbo_GetDateRangeArgumentExceptionTestData;
 	private SqlDatabaseTestActions dbo_GetDateRangeNullTestData;
+	private SqlDatabaseTestActions dbo_GetLangageCodeIdentifierSuccessTestData;
+	private SqlDatabaseTestActions dbo_GetLangageCodeIdentifierSqlNullValueExceptionTestData;
 }

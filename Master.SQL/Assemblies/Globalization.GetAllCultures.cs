@@ -6,10 +6,10 @@ using System.Globalization;
 public partial class Globalization
 {
 	/// <summary>
-	/// Should return culture related information of all cultures.
+	/// The <see cref="GetAllCultures"/> method should return culture related information of all cultures.
 	/// </summary>
 	/// <returns>Culture related information.</returns>
-	/// <exception cref="AssemblyException"></exception>
+	/// <exception cref="SqlClrException"></exception>
 	[SqlFunction(Name = nameof(GetAllCultures), FillRowMethodName = nameof(FillGetCultureRows),
 		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
 	public static IEnumerable GetAllCultures()
@@ -20,7 +20,7 @@ public partial class Globalization
 		}
 		catch (Exception ex)
 		{
-			throw new AssemblyException($"Something went wrong within method: '{nameof(GetAllCultures)}'", ex);
+			throw new SqlClrException($"Something went wrong within method: '{nameof(GetAllCultures)}'", ex);
 		}
 	}
 }
