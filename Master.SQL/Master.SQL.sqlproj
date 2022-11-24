@@ -88,6 +88,8 @@
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
     <PermissionSet>SAFE</PermissionSet>
     <AssemblyOwner>dbo</AssemblyOwner>
+    <DefaultSchema>clr</DefaultSchema>
+    <GenerateSqlClrDdl>True</GenerateSqlClrDdl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -130,7 +132,11 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="Deployment" />
     <Folder Include="Publish" />
-    <Folder Include="Assemblies" />
+    <Folder Include="clr" />
+    <Folder Include="Security" />
+    <Folder Include="Security\Schema" />
+    <Folder Include="clr\Date" />
+    <Folder Include="clr\Globalisation" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Key.snk" />
@@ -138,19 +144,20 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\dbo.Calendar.sql" />
+    <Build Include="Security\Schema\clr.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Deployment\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assemblies\Date.GetDateRange.cs" />
-    <Compile Include="Assemblies\AssemblyException.cs" />
-    <Compile Include="Assemblies\Globalization.GetCultureByName.cs" />
-    <Compile Include="Assemblies\Globalization.GetCultureByCode.cs" />
-    <Compile Include="Assemblies\Globalization.cs" />
-    <Compile Include="Assemblies\Globalization.GetAllCultures.cs" />
-    <Compile Include="Assemblies\Globalization.GetNeutralCultures.cs" />
-    <Compile Include="Assemblies\Globalization.GetLangageCodeIdentifier.cs" />
+    <Compile Include="clr\SqlClrException.cs" />
+    <Compile Include="clr\Date\Date.GetDateRange.cs" />
+    <Compile Include="clr\Globalisation\Globalization.cs" />
+    <Compile Include="clr\Globalisation\Globalization.GetAllCultures.cs" />
+    <Compile Include="clr\Globalisation\Globalization.GetCultureByCode.cs" />
+    <Compile Include="clr\Globalisation\Globalization.GetCultureByName.cs" />
+    <Compile Include="clr\Globalisation\Globalization.GetLangageCodeIdentifier.cs" />
+    <Compile Include="clr\Globalisation\Globalization.GetNeutralCultures.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

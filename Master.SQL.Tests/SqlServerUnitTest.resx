@@ -123,7 +123,7 @@ DECLARE @Count INT = NULL
 	, @Condition BIT = 0;
 
 SELECT @Count = COUNT(*)
-FROM [dbo].[GetAllCultures]();
+FROM [clr].[GetAllCultures]();
 
 IF (@COUNT &gt; 0)
 	SET @Condition = 1;
@@ -138,7 +138,7 @@ DECLARE @lcid AS INT;
 SELECT @lcid = 0;
 
 SELECT *
-FROM [dbo].[GetCultureByCode](@lcid);
+FROM [clr].[GetCultureByCode](@lcid);
 </value>
   </data>
   <data name="dbo_GetCultureByNameSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
@@ -148,7 +148,7 @@ DECLARE @cultureName NVARCHAR(5) = NULL;
 --SELECT @cultureName = NULL;
 
 SELECT *
-FROM [dbo].[GetCultureByName](@cultureName);
+FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
   <data name="dbo_GetDateRangeSuccessTest_TestAction.SqlScript" xml:space="preserve">
@@ -160,7 +160,7 @@ SELECT @StartDate = DATEADD(DAY, -10, GETDATE()),
        @EndDate = DATEADD(DAY, 10, GETDATE());
 
 SELECT *
-FROM [dbo].[GetDateRange](@StartDate, @EndDate);
+FROM [clr].[GetDateRange](@StartDate, @EndDate);
 </value>
   </data>
   <data name="dbo_GetNeutralCulturesSuccessTest_TestAction.SqlScript" xml:space="preserve">
@@ -169,7 +169,7 @@ DECLARE @Count INT = NULL
 	, @Condition BIT = 0;
 
 SELECT @Count = COUNT(*)
-FROM [dbo].[GetNeutralCultures]();
+FROM [clr].[GetNeutralCultures]();
 
 IF (@COUNT &gt; 0)
 	SET @Condition = 1;
@@ -182,7 +182,7 @@ SELECT @Condition;
 DECLARE @lcid AS INT;
 
 SELECT *
-FROM [dbo].[GetCultureByCode](@lcid);
+FROM [clr].[GetCultureByCode](@lcid);
 </value>
   </data>
   <data name="dbo_GetCultureByCodeSuccessTest_TestAction.SqlScript" xml:space="preserve">
@@ -192,7 +192,7 @@ DECLARE @lcid AS INT;
 SELECT @lcid = 1031;
 
 SELECT *
-FROM [dbo].[GetCultureByCode](@lcid);
+FROM [clr].[GetCultureByCode](@lcid);
 </value>
   </data>
   <data name="dbo_GetCultureByNameSuccessTest_TestAction.SqlScript" xml:space="preserve">
@@ -202,7 +202,7 @@ DECLARE @cultureName NVARCHAR(5) = NULL;
 SELECT @cultureName = 'de-DE';
 
 SELECT *
-FROM [dbo].[GetCultureByName](@cultureName);
+FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
   <metadata name="GetCultureByNameChecksumCondition.Configuration" xml:space="preserve">
@@ -215,7 +215,7 @@ DECLARE @cultureName NVARCHAR(5) = NULL;
 SELECT @cultureName = 'xx-XX';
 
 SELECT *
-FROM [dbo].[GetCultureByName](@cultureName);
+FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
   <metadata name="GetCultureByNameChecksumCondition.Configuration" xml:space="preserve">
@@ -228,7 +228,7 @@ DECLARE @cultureName NVARCHAR(5) = NULL;
 SELECT @cultureName = 'xxxxx';
 
 SELECT *
-FROM [dbo].[GetCultureByName](@cultureName);
+FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
   <data name="dbo_GetDateRangeArgumentExceptionTest_TestAction.SqlScript" xml:space="preserve">
@@ -240,7 +240,7 @@ SELECT @StartDate = DATEADD(DAY, -10, GETDATE()),
        @EndDate = DATEADD(DAY, -11, GETDATE());
 
 SELECT *
-FROM [dbo].[GetDateRange](@StartDate, @EndDate);
+FROM [clr].[GetDateRange](@StartDate, @EndDate);
 </value>
   </data>
   <data name="dbo_GetDateRangeNullTest_TestAction.SqlScript" xml:space="preserve">
@@ -249,7 +249,7 @@ DECLARE @StartDate AS DATETIME
 	, @EndDate AS DATETIME;
 
 SELECT *
-FROM [dbo].[GetDateRange](@StartDate, @EndDate);
+FROM [clr].[GetDateRange](@StartDate, @EndDate);
 </value>
   </data>
   <data name="dbo_GetLangageCodeIdentifierSuccessTest_TestAction.SqlScript" xml:space="preserve">
@@ -258,13 +258,13 @@ DECLARE @CultureName NVARCHAR(15) = NULL;
 
 SET @CultureName = 'en-GB';
 
-SELECT [dbo].[GetLangageCodeIdentifier](@CultureName);</value>
+SELECT [clr].[GetLangageCodeIdentifier](@CultureName);</value>
   </data>
   <data name="dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetLangageCodeIdentifier
 DECLARE @CultureName NVARCHAR(15) = NULL;
 
-SELECT [dbo].[GetLangageCodeIdentifier](@CultureName);</value>
+SELECT [clr].[GetLangageCodeIdentifier](@CultureName);</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

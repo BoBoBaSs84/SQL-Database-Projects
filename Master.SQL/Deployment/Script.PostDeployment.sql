@@ -12,7 +12,7 @@ Post-Deployment Script Template
 WITH SOURCE
 AS (
 	SELECT [Date]
-	FROM [dbo].[GetDateRange](DATEADD(YEAR, -25, GETDATE()), DATEADD(YEAR, 25, GETDATE()))
+	FROM [clr].[GetDateRange](DATEADD(YEAR, -25, GETDATE()), DATEADD(YEAR, 25, GETDATE()))
 )
 MERGE INTO [dbo].[Calendar] AS TARGET
 USING SOURCE
