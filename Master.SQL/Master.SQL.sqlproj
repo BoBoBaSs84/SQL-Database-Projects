@@ -24,8 +24,8 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
     <TargetFrameworkProfile />
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyOriginatorKeyFile>BoBoBaSs84.pfx</AssemblyOriginatorKeyFile>
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <AnsiNulls>True</AnsiNulls>
     <QuotedIdentifier>True</QuotedIdentifier>
@@ -55,7 +55,7 @@
     <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
     <IsEncryptionOn>False</IsEncryptionOn>
     <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
-    <Trustworthy>True</Trustworthy>
+    <Trustworthy>False</Trustworthy>
     <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
     <PageVerify>CHECKSUM</PageVerify>
     <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
@@ -73,7 +73,7 @@
     <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
     <NumericRoundAbort>False</NumericRoundAbort>
     <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
-    <DatabaseChaining>True</DatabaseChaining>
+    <DatabaseChaining>False</DatabaseChaining>
     <DatabaseState>ONLINE</DatabaseState>
     <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
     <DefaultCursor>GLOBAL</DefaultCursor>
@@ -140,9 +140,8 @@
     <Folder Include="private\Functions\Table-valued Functions" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Key.snk" />
-    <None Include="Publish\Master.SQL.BoboDev.publish.xml" />
-    <None Include="Publish\Master.SQL.LocalDB.publish.xml" />
+    <None Include="Publish\Master.SQL.BOBO-DEV.publish.xml" />
+    <None Include="Publish\Master.SQL.LOCALDB.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Schema\clr.sql" />
@@ -161,6 +160,7 @@
     <Compile Include="clr\Globalisation\Globalization.GetCultureByName.cs" />
     <Compile Include="clr\Globalisation\Globalization.GetLangageCodeIdentifier.cs" />
     <Compile Include="clr\Globalisation\Globalization.GetNeutralCultures.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />

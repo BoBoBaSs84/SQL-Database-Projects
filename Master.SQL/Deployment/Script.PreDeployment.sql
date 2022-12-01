@@ -9,18 +9,19 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+PRINT 'Setting "show advanced options" to ON'
 EXEC sp_configure 'show advanced options' , 1;
 RECONFIGURE;
 GO
-EXEC sp_configure 'clr enable' ,1;
+PRINT 'Setting "clr enabled" to ON'
+EXEC sp_configure 'clr enabled', 1;
 RECONFIGURE;
 GO
-EXEC sp_configure 'clr strict security', 1;
+PRINT 'Setting "clr strict security" to OFF'
+EXEC sp_configure 'clr strict security', 0;
 RECONFIGURE;
 GO
+PRINT 'Setting "xp_cmdshell" to ON'
 EXEC sp_configure 'xp_cmdshell', 1;
-RECONFIGURE;
-GO
-EXEC sp_configure 'show advanced options' , 0;
 RECONFIGURE;
 GO
