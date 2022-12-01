@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="dbo_GetAllCulturesSuccessTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetAllCulturesSuccessTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetAllCultures
 DECLARE @Count INT = NULL
 	, @Condition BIT = 0;
@@ -131,7 +131,7 @@ IF (@COUNT &gt; 0)
 SELECT @Condition;
 </value>
   </data>
-  <data name="dbo_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByCode
 DECLARE @lcid AS INT;
 
@@ -141,7 +141,7 @@ SELECT *
 FROM [clr].[GetCultureByCode](@lcid);
 </value>
   </data>
-  <data name="dbo_GetCultureByNameSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCultureByNameSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByName
 DECLARE @cultureName NVARCHAR(5) = NULL;
 
@@ -151,7 +151,7 @@ SELECT *
 FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
-  <data name="dbo_GetDateRangeSuccessTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetDateRangeSuccessTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetDateRange
 DECLARE @StartDate AS DATETIME
 	, @EndDate AS DATETIME;
@@ -163,7 +163,7 @@ SELECT *
 FROM [clr].[GetDateRange](@StartDate, @EndDate);
 </value>
   </data>
-  <data name="dbo_GetNeutralCulturesSuccessTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetNeutralCulturesSuccessTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetNeutralCultures
 DECLARE @Count INT = NULL
 	, @Condition BIT = 0;
@@ -177,7 +177,7 @@ IF (@COUNT &gt; 0)
 SELECT @Condition;
 </value>
   </data>
-  <data name="dbo_GetCultureByCodeSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCultureByCodeSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByCode
 DECLARE @lcid AS INT;
 
@@ -185,7 +185,7 @@ SELECT *
 FROM [clr].[GetCultureByCode](@lcid);
 </value>
   </data>
-  <data name="dbo_GetCultureByCodeSuccessTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCultureByCodeSuccessTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByCode
 DECLARE @lcid AS INT;
 
@@ -195,7 +195,7 @@ SELECT *
 FROM [clr].[GetCultureByCode](@lcid);
 </value>
   </data>
-  <data name="dbo_GetCultureByNameSuccessTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCultureByNameSuccessTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByName
 DECLARE @cultureName NVARCHAR(5) = NULL;
 
@@ -208,7 +208,7 @@ FROM [clr].[GetCultureByName](@cultureName);
   <metadata name="GetCultureByNameChecksumCondition.Configuration" xml:space="preserve">
     <value>Press to configure</value>
   </metadata>
-  <data name="dbo_GetCultureByNameUnknownLocaleTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCultureByNameUnknownLocaleTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByName
 DECLARE @cultureName NVARCHAR(5) = NULL;
 
@@ -218,10 +218,7 @@ SELECT *
 FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
-  <metadata name="GetCultureByNameChecksumCondition.Configuration" xml:space="preserve">
-    <value>Press to configure</value>
-  </metadata>
-  <data name="dbo_GetCultureByNameCultureNotFoundExceptionTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCultureByNameCultureNotFoundExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetCultureByName
 DECLARE @cultureName NVARCHAR(5) = NULL;
 
@@ -231,7 +228,7 @@ SELECT *
 FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
-  <data name="dbo_GetDateRangeArgumentExceptionTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetDateRangeArgumentExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetDateRange
 DECLARE @StartDate AS DATETIME
 	, @EndDate AS DATETIME;
@@ -243,7 +240,7 @@ SELECT *
 FROM [clr].[GetDateRange](@StartDate, @EndDate);
 </value>
   </data>
-  <data name="dbo_GetDateRangeNullTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetDateRangeNullTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetDateRange
 DECLARE @StartDate AS DATETIME
 	, @EndDate AS DATETIME;
@@ -252,7 +249,7 @@ SELECT *
 FROM [clr].[GetDateRange](@StartDate, @EndDate);
 </value>
   </data>
-  <data name="dbo_GetLangageCodeIdentifierSuccessTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetLangageCodeIdentifierSuccessTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetLangageCodeIdentifier
 DECLARE @CultureName NVARCHAR(15) = NULL;
 
@@ -260,11 +257,17 @@ SET @CultureName = 'en-GB';
 
 SELECT [clr].[GetLangageCodeIdentifier](@CultureName);</value>
   </data>
-  <data name="dbo_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetLangageCodeIdentifier
 DECLARE @CultureName NVARCHAR(15) = NULL;
 
 SELECT [clr].[GetLangageCodeIdentifier](@CultureName);</value>
+  </data>
+  <data name="private_WhoAmITest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for private.WhoAmI
+SELECT *
+FROM [private].[WhoAmI]();
+</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
