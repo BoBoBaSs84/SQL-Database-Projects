@@ -130,11 +130,11 @@
     <Folder Include="Properties" />
     <Folder Include="Deployment" />
     <Folder Include="Publish" />
-    <Folder Include="clr" />
+    <Folder Include="Assembly" />
     <Folder Include="Security" />
     <Folder Include="Security\Schema" />
-    <Folder Include="clr\Date" />
-    <Folder Include="clr\Globalisation" />
+    <Folder Include="Assembly\Date" />
+    <Folder Include="Assembly\Globalisation" />
     <Folder Include="private" />
     <Folder Include="private\Functions" />
     <Folder Include="private\Functions\Table-valued Functions" />
@@ -152,14 +152,14 @@
     <PreDeploy Include="Deployment\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clr\SqlClrException.cs" />
-    <Compile Include="clr\Date\Date.GetDateRange.cs" />
-    <Compile Include="clr\Globalisation\Globalization.cs" />
-    <Compile Include="clr\Globalisation\Globalization.GetAllCultures.cs" />
-    <Compile Include="clr\Globalisation\Globalization.GetCultureByCode.cs" />
-    <Compile Include="clr\Globalisation\Globalization.GetCultureByName.cs" />
-    <Compile Include="clr\Globalisation\Globalization.GetLangageCodeIdentifier.cs" />
-    <Compile Include="clr\Globalisation\Globalization.GetNeutralCultures.cs" />
+    <Compile Include="Assembly\SqlClrException.cs" />
+    <Compile Include="Assembly\Date\Date.GetDateRange.cs" />
+    <Compile Include="Assembly\Globalisation\Globalization.cs" />
+    <Compile Include="Assembly\Globalisation\Globalization.GetAllCultures.cs" />
+    <Compile Include="Assembly\Globalisation\Globalization.GetCultureByCode.cs" />
+    <Compile Include="Assembly\Globalisation\Globalization.GetCultureByName.cs" />
+    <Compile Include="Assembly\Globalisation\Globalization.GetLangageCodeIdentifier.cs" />
+    <Compile Include="Assembly\Globalisation\Globalization.GetNeutralCultures.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
