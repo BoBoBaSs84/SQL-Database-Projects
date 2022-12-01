@@ -9,15 +9,3 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-WITH SOURCE
-AS (
-	SELECT [Date]
-	FROM [clr].[GetDateRange](DATEADD(YEAR, -25, GETDATE()), DATEADD(YEAR, 25, GETDATE()))
-)
-MERGE INTO [dbo].[Calendar] AS TARGET
-USING SOURCE
-	ON SOURCE.[Date] = TARGET.[Date]
-WHEN NOT MATCHED BY TARGET
-	THEN
-		INSERT ([Date])
-		VALUES (SOURCE.[Date]);

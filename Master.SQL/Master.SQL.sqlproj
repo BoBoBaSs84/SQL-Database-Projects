@@ -128,8 +128,6 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo" />
-    <Folder Include="dbo\Tables" />
     <Folder Include="Deployment" />
     <Folder Include="Publish" />
     <Folder Include="clr" />
@@ -137,14 +135,19 @@
     <Folder Include="Security\Schema" />
     <Folder Include="clr\Date" />
     <Folder Include="clr\Globalisation" />
+    <Folder Include="private" />
+    <Folder Include="private\Functions" />
+    <Folder Include="private\Functions\Table-valued Functions" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Key.snk" />
     <None Include="Publish\Master.SQL.BoboDev.publish.xml" />
+    <None Include="Publish\Master.SQL.LocalDB.publish.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\dbo.Calendar.sql" />
     <Build Include="Security\Schema\clr.sql" />
+    <Build Include="private\private.sql" />
+    <Build Include="private\Functions\Table-valued Functions\private.WhoAmI.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Deployment\Script.PreDeployment.sql" />
