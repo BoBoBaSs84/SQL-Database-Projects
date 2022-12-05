@@ -151,16 +151,19 @@ SELECT *
 FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
-  <data name="clr_GetDateRangeSuccessTest_TestAction.SqlScript" xml:space="preserve">
-    <value>-- database unit test for dbo.GetDateRange
+  <metadata name="GetCalendarRangeChecksumSuccessCondition.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
+  <data name="clr_GetCalendarRangeSuccessTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for clr.GetDateRange
 DECLARE @StartDate AS DATETIME
 	, @EndDate AS DATETIME;
 
-SELECT @StartDate = DATEADD(DAY, -10, GETDATE()),
-       @EndDate = DATEADD(DAY, 10, GETDATE());
+SELECT @StartDate = '1990-12-01'
+	, @EndDate = '1990-12-31'
 
-SELECT *
-FROM [clr].[GetDateRange](@StartDate, @EndDate);
+SELECT * 
+FROM [clr].[GetCalendarRange](@StartDate, @EndDate);
 </value>
   </data>
   <data name="clr_GetNeutralCulturesSuccessTest_TestAction.SqlScript" xml:space="preserve">
@@ -228,7 +231,7 @@ SELECT *
 FROM [clr].[GetCultureByName](@cultureName);
 </value>
   </data>
-  <data name="clr_GetDateRangeArgumentExceptionTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCalendarRangeArgumentOutOfRangeExceptionTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetDateRange
 DECLARE @StartDate AS DATETIME
 	, @EndDate AS DATETIME;
@@ -237,16 +240,16 @@ SELECT @StartDate = DATEADD(DAY, -10, GETDATE()),
        @EndDate = DATEADD(DAY, -11, GETDATE());
 
 SELECT *
-FROM [clr].[GetDateRange](@StartDate, @EndDate);
+FROM [clr].[GetCalendarRange](@StartDate, @EndDate);
 </value>
   </data>
-  <data name="clr_GetDateRangeNullTest_TestAction.SqlScript" xml:space="preserve">
+  <data name="clr_GetCalendarRangeNullTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.GetDateRange
 DECLARE @StartDate AS DATETIME
 	, @EndDate AS DATETIME;
 
 SELECT *
-FROM [clr].[GetDateRange](@StartDate, @EndDate);
+FROM [clr].[GetCalendarRange](@StartDate, @EndDate);
 </value>
   </data>
   <data name="clr_GetLangageCodeIdentifierSuccessTest_TestAction.SqlScript" xml:space="preserve">
@@ -267,6 +270,76 @@ SELECT [clr].[GetLangageCodeIdentifier](@CultureName);</value>
     <value>-- database unit test for private.WhoAmI
 SELECT *
 FROM [private].[WhoAmI]();
+</value>
+  </data>
+  <metadata name="GetCalendarRangeByCultureChecksumSuccessCondition.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
+  <data name="clr_GetCalendarRangeByCultureSuccessTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for clr.GetCalendarRangeByCulture
+DECLARE @StartDate AS DATETIME
+	, @EndDate AS DATETIME
+	, @Culture VARCHAR(15);
+
+SELECT @StartDate = '1990-12-01'
+	, @EndDate = '1990-12-31'
+	, @Culture = 'he-IL';
+
+SELECT * 
+FROM [clr].[GetCalendarRangeByCulture](@StartDate, @EndDate, @Culture);
+</value>
+  </data>
+  <data name="clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for clr.GetCalendarRangeByCulture
+DECLARE @StartDate AS DATETIME
+	, @EndDate AS DATETIME
+	, @Culture VARCHAR(15);
+
+SELECT @StartDate = '1990-12-02'
+	, @EndDate = '1990-12-01'
+	, @Culture = 'pl-PL';
+
+SELECT * 
+FROM [clr].[GetCalendarRangeByCulture](@StartDate, @EndDate, @Culture);
+</value>
+  </data>
+  <data name="clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for clr.GetCalendarRangeByCulture
+DECLARE @StartDate AS DATETIME
+	, @EndDate AS DATETIME
+	, @Culture VARCHAR(15);
+
+SELECT @StartDate = '1870-01-01'
+	, @EndDate = '1870-03-31';
+
+SELECT * 
+FROM [clr].[GetCalendarRangeByCulture](@StartDate, @EndDate, @Culture);
+</value>
+  </data>
+  <data name="clr_GetCalendarRangeByCultureSpeedTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for clr.GetCalendarRangeByCulture
+DECLARE @StartDate AS DATETIME
+	, @EndDate AS DATETIME
+	, @Culture VARCHAR(15);
+
+SELECT @StartDate = '1753-01-01'
+	, @EndDate = '2999-12-31'
+	, @Culture = 'pl-PL';
+
+SELECT * 
+FROM [clr].[GetCalendarRangeByCulture](@StartDate, @EndDate, @Culture);
+</value>
+  </data>
+  <data name="clr_GetCalendarRangeByCultureNullTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for clr.GetCalendarRangeByCulture
+DECLARE @StartDate AS DATETIME
+	, @EndDate AS DATETIME
+	, @Culture VARCHAR(15);
+
+SELECT @Culture = 'fr-FR';
+
+SELECT * 
+FROM [clr].[GetCalendarRangeByCulture](@StartDate, @EndDate, @Culture);
 </value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -14,16 +14,13 @@ public partial class Globalization
 	/// </remarks>
 	/// <param name="cultureName">This is the culture name. ("de-DE" or "en")</param>
 	/// <returns>Culture related information.</returns>
-	/// <exception cref="SqlClrException"></exception>
+	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
 	[SqlFunction(Name = nameof(GetCultureByName), FillRowMethodName = nameof(FillGetCultureRows),
 		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
-	public static IEnumerable GetCultureByName([SqlFacet(MaxSize = 15)] SqlString cultureName)
+	public static IEnumerable GetCultureByName([SqlFacet(MaxSize = 15, IsNullable = false)] SqlString cultureName)
 	{
 		try
 		{
-			if (cultureName == null)
-				throw new ArgumentNullException(nameof(cultureName));
-
 			ArrayList result = new();
 			CultureInfo cultureInfo = CultureInfo.GetCultureInfo((string)cultureName);
 

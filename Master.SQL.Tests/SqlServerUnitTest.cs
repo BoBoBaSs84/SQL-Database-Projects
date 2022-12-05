@@ -37,8 +37,8 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetAllCulturesScalarValueCondition;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCultureByNameSqlNullValueExceptionTest_TestAction;
-		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetDateRangeSuccessTest_TestAction;
-		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition GetDateRangeRowCountCondition;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeSuccessTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition GetCalendarRangeChecksumSuccessCondition;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetNeutralCulturesSuccessTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetNeutralCulturesScalarValueCondition;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCultureByCodeSqlNullValueExceptionTest_TestAction;
@@ -49,35 +49,49 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCultureByNameUnknownLocaleTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition GetCultureByNameChecksumCondition;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCultureByNameCultureNotFoundExceptionTest_TestAction;
-		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetDateRangeArgumentExceptionTest_TestAction;
-		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetDateRangeNullTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeArgumentOutOfRangeExceptionTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeNullTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetDateRangeScalarValueCondition;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetLangageCodeIdentifierSuccessTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetLangageCodeIdentifierScalarValueCondition;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction private_WhoAmITest_TestAction;
 		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition rowCountCondition1;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeByCultureSuccessTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition GetCalendarRangeByCultureChecksumSuccessCondition;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.InconclusiveCondition inconclusiveCondition1;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeByCultureSpeedTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ExecutionTimeCondition GetCalendarRangeByCultureExecutionTimeCondition;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction clr_GetCalendarRangeByCultureNullTest_TestAction;
+		Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition GetCalendarRangeByCultureScalarValueCondition;
 		this.clr_GetAllCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetCultureByCodeArgumentOutOfRangeExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetCultureByNameSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.clr_GetDateRangeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetNeutralCulturesSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetCultureByCodeSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetCultureByCodeSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetCultureByNameSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetCultureByNameUnknownLocaleTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetCultureByNameCultureNotFoundExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.clr_GetDateRangeArgumentExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-		this.clr_GetDateRangeNullTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeArgumentOutOfRangeExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeNullTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetLangageCodeIdentifierSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.clr_GetLangageCodeIdentifierSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		this.private_WhoAmITestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeByCultureSuccessTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeByCultureSqlNullValueExceptionTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeByCultureSpeedTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+		this.clr_GetCalendarRangeByCultureNullTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
 		clr_GetAllCulturesSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetAllCulturesScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
 		clr_GetCultureByCodeArgumentOutOfRangeExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		clr_GetCultureByNameSqlNullValueExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-		clr_GetDateRangeSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-		GetDateRangeRowCountCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
+		clr_GetCalendarRangeSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		GetCalendarRangeChecksumSuccessCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition();
 		clr_GetNeutralCulturesSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetNeutralCulturesScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
 		clr_GetCultureByCodeSqlNullValueExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
@@ -88,14 +102,23 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		clr_GetCultureByNameUnknownLocaleTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetCultureByNameChecksumCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition();
 		clr_GetCultureByNameCultureNotFoundExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-		clr_GetDateRangeArgumentExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-		clr_GetDateRangeNullTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		clr_GetCalendarRangeArgumentOutOfRangeExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		clr_GetCalendarRangeNullTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetDateRangeScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
 		clr_GetLangageCodeIdentifierSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		GetLangageCodeIdentifierScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
 		clr_GetLangageCodeIdentifierSqlNullValueExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		private_WhoAmITest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
 		rowCountCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
+		clr_GetCalendarRangeByCultureSuccessTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		GetCalendarRangeByCultureChecksumSuccessCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ChecksumCondition();
+		clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		inconclusiveCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.InconclusiveCondition();
+		clr_GetCalendarRangeByCultureSpeedTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		GetCalendarRangeByCultureExecutionTimeCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ExecutionTimeCondition();
+		clr_GetCalendarRangeByCultureNullTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+		GetCalendarRangeByCultureScalarValueCondition = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.ScalarValueCondition();
 		// 
 		// clr_GetAllCulturesSuccessTest_TestAction
 		// 
@@ -120,17 +143,16 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		// 
 		resources.ApplyResources(clr_GetCultureByNameSqlNullValueExceptionTest_TestAction, "clr_GetCultureByNameSqlNullValueExceptionTest_TestAction");
 		// 
-		// clr_GetDateRangeSuccessTest_TestAction
+		// clr_GetCalendarRangeSuccessTest_TestAction
 		// 
-		clr_GetDateRangeSuccessTest_TestAction.Conditions.Add(GetDateRangeRowCountCondition);
-		resources.ApplyResources(clr_GetDateRangeSuccessTest_TestAction, "clr_GetDateRangeSuccessTest_TestAction");
+		clr_GetCalendarRangeSuccessTest_TestAction.Conditions.Add(GetCalendarRangeChecksumSuccessCondition);
+		resources.ApplyResources(clr_GetCalendarRangeSuccessTest_TestAction, "clr_GetCalendarRangeSuccessTest_TestAction");
 		// 
-		// GetDateRangeRowCountCondition
+		// GetCalendarRangeChecksumSuccessCondition
 		// 
-		GetDateRangeRowCountCondition.Enabled = true;
-		GetDateRangeRowCountCondition.Name = "GetDateRangeRowCountCondition";
-		GetDateRangeRowCountCondition.ResultSet = 1;
-		GetDateRangeRowCountCondition.RowCount = 21;
+		GetCalendarRangeChecksumSuccessCondition.Checksum = "-254649884";
+		GetCalendarRangeChecksumSuccessCondition.Enabled = true;
+		GetCalendarRangeChecksumSuccessCondition.Name = "GetCalendarRangeChecksumSuccessCondition";
 		// 
 		// clr_GetNeutralCulturesSuccessTest_TestAction
 		// 
@@ -190,14 +212,14 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		// 
 		resources.ApplyResources(clr_GetCultureByNameCultureNotFoundExceptionTest_TestAction, "clr_GetCultureByNameCultureNotFoundExceptionTest_TestAction");
 		// 
-		// clr_GetDateRangeArgumentExceptionTest_TestAction
+		// clr_GetCalendarRangeArgumentOutOfRangeExceptionTest_TestAction
 		// 
-		resources.ApplyResources(clr_GetDateRangeArgumentExceptionTest_TestAction, "clr_GetDateRangeArgumentExceptionTest_TestAction");
+		resources.ApplyResources(clr_GetCalendarRangeArgumentOutOfRangeExceptionTest_TestAction, "clr_GetCalendarRangeArgumentOutOfRangeExceptionTest_TestAction");
 		// 
-		// clr_GetDateRangeNullTest_TestAction
+		// clr_GetCalendarRangeNullTest_TestAction
 		// 
-		clr_GetDateRangeNullTest_TestAction.Conditions.Add(GetDateRangeScalarValueCondition);
-		resources.ApplyResources(clr_GetDateRangeNullTest_TestAction, "clr_GetDateRangeNullTest_TestAction");
+		clr_GetCalendarRangeNullTest_TestAction.Conditions.Add(GetDateRangeScalarValueCondition);
+		resources.ApplyResources(clr_GetCalendarRangeNullTest_TestAction, "clr_GetCalendarRangeNullTest_TestAction");
 		// 
 		// GetDateRangeScalarValueCondition
 		// 
@@ -240,6 +262,31 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		rowCountCondition1.ResultSet = 1;
 		rowCountCondition1.RowCount = 1;
 		// 
+		// clr_GetCalendarRangeByCultureSuccessTest_TestAction
+		// 
+		clr_GetCalendarRangeByCultureSuccessTest_TestAction.Conditions.Add(GetCalendarRangeByCultureChecksumSuccessCondition);
+		resources.ApplyResources(clr_GetCalendarRangeByCultureSuccessTest_TestAction, "clr_GetCalendarRangeByCultureSuccessTest_TestAction");
+		// 
+		// GetCalendarRangeByCultureChecksumSuccessCondition
+		// 
+		GetCalendarRangeByCultureChecksumSuccessCondition.Checksum = "-934648471";
+		GetCalendarRangeByCultureChecksumSuccessCondition.Enabled = true;
+		GetCalendarRangeByCultureChecksumSuccessCondition.Name = "GetCalendarRangeByCultureChecksumSuccessCondition";
+		// 
+		// clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest_TestAction
+		// 
+		resources.ApplyResources(clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest_TestAction, "clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest_TestAction");
+		// 
+		// clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction
+		// 
+		clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction.Conditions.Add(inconclusiveCondition1);
+		resources.ApplyResources(clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction, "clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction");
+		// 
+		// inconclusiveCondition1
+		// 
+		inconclusiveCondition1.Enabled = true;
+		inconclusiveCondition1.Name = "inconclusiveCondition1";
+		// 
 		// clr_GetAllCulturesSuccessTestData
 		// 
 		this.clr_GetAllCulturesSuccessTestData.PosttestAction = null;
@@ -258,11 +305,11 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		this.clr_GetCultureByNameSqlNullValueExceptionTestData.PretestAction = null;
 		this.clr_GetCultureByNameSqlNullValueExceptionTestData.TestAction = clr_GetCultureByNameSqlNullValueExceptionTest_TestAction;
 		// 
-		// clr_GetDateRangeSuccessTestData
+		// clr_GetCalendarRangeSuccessTestData
 		// 
-		this.clr_GetDateRangeSuccessTestData.PosttestAction = null;
-		this.clr_GetDateRangeSuccessTestData.PretestAction = null;
-		this.clr_GetDateRangeSuccessTestData.TestAction = clr_GetDateRangeSuccessTest_TestAction;
+		this.clr_GetCalendarRangeSuccessTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeSuccessTestData.PretestAction = null;
+		this.clr_GetCalendarRangeSuccessTestData.TestAction = clr_GetCalendarRangeSuccessTest_TestAction;
 		// 
 		// clr_GetNeutralCulturesSuccessTestData
 		// 
@@ -300,17 +347,17 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		this.clr_GetCultureByNameCultureNotFoundExceptionTestData.PretestAction = null;
 		this.clr_GetCultureByNameCultureNotFoundExceptionTestData.TestAction = clr_GetCultureByNameCultureNotFoundExceptionTest_TestAction;
 		// 
-		// clr_GetDateRangeArgumentExceptionTestData
+		// clr_GetCalendarRangeArgumentOutOfRangeExceptionTestData
 		// 
-		this.clr_GetDateRangeArgumentExceptionTestData.PosttestAction = null;
-		this.clr_GetDateRangeArgumentExceptionTestData.PretestAction = null;
-		this.clr_GetDateRangeArgumentExceptionTestData.TestAction = clr_GetDateRangeArgumentExceptionTest_TestAction;
+		this.clr_GetCalendarRangeArgumentOutOfRangeExceptionTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeArgumentOutOfRangeExceptionTestData.PretestAction = null;
+		this.clr_GetCalendarRangeArgumentOutOfRangeExceptionTestData.TestAction = clr_GetCalendarRangeArgumentOutOfRangeExceptionTest_TestAction;
 		// 
-		// clr_GetDateRangeNullTestData
+		// clr_GetCalendarRangeNullTestData
 		// 
-		this.clr_GetDateRangeNullTestData.PosttestAction = null;
-		this.clr_GetDateRangeNullTestData.PretestAction = null;
-		this.clr_GetDateRangeNullTestData.TestAction = clr_GetDateRangeNullTest_TestAction;
+		this.clr_GetCalendarRangeNullTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeNullTestData.PretestAction = null;
+		this.clr_GetCalendarRangeNullTestData.TestAction = clr_GetCalendarRangeNullTest_TestAction;
 		// 
 		// clr_GetLangageCodeIdentifierSuccessTestData
 		// 
@@ -329,6 +376,62 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		this.private_WhoAmITestData.PosttestAction = null;
 		this.private_WhoAmITestData.PretestAction = null;
 		this.private_WhoAmITestData.TestAction = private_WhoAmITest_TestAction;
+		// 
+		// clr_GetCalendarRangeByCultureSuccessTestData
+		// 
+		this.clr_GetCalendarRangeByCultureSuccessTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeByCultureSuccessTestData.PretestAction = null;
+		this.clr_GetCalendarRangeByCultureSuccessTestData.TestAction = clr_GetCalendarRangeByCultureSuccessTest_TestAction;
+		// 
+		// clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTestData
+		// 
+		this.clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTestData.PretestAction = null;
+		this.clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTestData.TestAction = clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest_TestAction;
+		// 
+		// clr_GetCalendarRangeByCultureSqlNullValueExceptionTestData
+		// 
+		this.clr_GetCalendarRangeByCultureSqlNullValueExceptionTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeByCultureSqlNullValueExceptionTestData.PretestAction = null;
+		this.clr_GetCalendarRangeByCultureSqlNullValueExceptionTestData.TestAction = clr_GetCalendarRangeByCultureSqlNullValueExceptionTest_TestAction;
+		// 
+		// clr_GetCalendarRangeByCultureSpeedTestData
+		// 
+		this.clr_GetCalendarRangeByCultureSpeedTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeByCultureSpeedTestData.PretestAction = null;
+		this.clr_GetCalendarRangeByCultureSpeedTestData.TestAction = clr_GetCalendarRangeByCultureSpeedTest_TestAction;
+		// 
+		// clr_GetCalendarRangeByCultureSpeedTest_TestAction
+		// 
+		clr_GetCalendarRangeByCultureSpeedTest_TestAction.Conditions.Add(GetCalendarRangeByCultureExecutionTimeCondition);
+		resources.ApplyResources(clr_GetCalendarRangeByCultureSpeedTest_TestAction, "clr_GetCalendarRangeByCultureSpeedTest_TestAction");
+		// 
+		// GetCalendarRangeByCultureExecutionTimeCondition
+		// 
+		GetCalendarRangeByCultureExecutionTimeCondition.Enabled = true;
+		GetCalendarRangeByCultureExecutionTimeCondition.ExecutionTime = System.TimeSpan.Parse("00:00:03");
+		GetCalendarRangeByCultureExecutionTimeCondition.Name = "GetCalendarRangeByCultureExecutionTimeCondition";
+		// 
+		// clr_GetCalendarRangeByCultureNullTestData
+		// 
+		this.clr_GetCalendarRangeByCultureNullTestData.PosttestAction = null;
+		this.clr_GetCalendarRangeByCultureNullTestData.PretestAction = null;
+		this.clr_GetCalendarRangeByCultureNullTestData.TestAction = clr_GetCalendarRangeByCultureNullTest_TestAction;
+		// 
+		// clr_GetCalendarRangeByCultureNullTest_TestAction
+		// 
+		clr_GetCalendarRangeByCultureNullTest_TestAction.Conditions.Add(GetCalendarRangeByCultureScalarValueCondition);
+		resources.ApplyResources(clr_GetCalendarRangeByCultureNullTest_TestAction, "clr_GetCalendarRangeByCultureNullTest_TestAction");
+		// 
+		// GetCalendarRangeByCultureScalarValueCondition
+		// 
+		GetCalendarRangeByCultureScalarValueCondition.ColumnNumber = 1;
+		GetCalendarRangeByCultureScalarValueCondition.Enabled = true;
+		GetCalendarRangeByCultureScalarValueCondition.ExpectedValue = "1900-01-01";
+		GetCalendarRangeByCultureScalarValueCondition.Name = "GetCalendarRangeByCultureScalarValueCondition";
+		GetCalendarRangeByCultureScalarValueCondition.NullExpected = false;
+		GetCalendarRangeByCultureScalarValueCondition.ResultSet = 1;
+		GetCalendarRangeByCultureScalarValueCondition.RowNumber = 1;
 	}
 
 	#endregion
@@ -423,9 +526,9 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	}
 
 	[TestMethod()]
-	public void clr_GetDateRangeSuccessTest()
+	public void clr_GetCalendarRangeSuccessTest()
 	{
-		SqlDatabaseTestActions testActions = clr_GetDateRangeSuccessTestData;
+		SqlDatabaseTestActions testActions = clr_GetCalendarRangeSuccessTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
@@ -469,6 +572,7 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
 	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
 	public void clr_GetCultureByCodeSqlNullValueExceptionTest()
@@ -493,6 +597,7 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
 	public void clr_GetCultureByCodeSuccessTest()
 	{
@@ -516,6 +621,7 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
 	public void clr_GetCultureByNameSuccessTest()
 	{
@@ -539,6 +645,7 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
 	public void clr_GetCultureByNameUnknownLocaleTest()
 	{
@@ -587,11 +694,12 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
 	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
-	public void clr_GetDateRangeArgumentExceptionTest()
+	public void clr_GetCalendarRangeArgumentOutOfRangeExceptionTest()
 	{
-		SqlDatabaseTestActions testActions = clr_GetDateRangeArgumentExceptionTestData;
+		SqlDatabaseTestActions testActions = clr_GetCalendarRangeArgumentOutOfRangeExceptionTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
@@ -611,10 +719,11 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
-	public void clr_GetDateRangeNullTest()
+	public void clr_GetCalendarRangeNullTest()
 	{
-		SqlDatabaseTestActions testActions = clr_GetDateRangeNullTestData;
+		SqlDatabaseTestActions testActions = clr_GetCalendarRangeNullTestData;
 		// Execute the pre-test script
 		// 
 		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
@@ -634,6 +743,7 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(PrivilegedContext, PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
 	public void clr_GetLangageCodeIdentifierSuccessTest()
 	{
@@ -682,6 +792,7 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
 		}
 	}
+
 	[TestMethod()]
 	public void private_WhoAmITest()
 	{
@@ -706,19 +817,149 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 		}
 	}
 
+	[TestMethod()]
+	public void clr_GetCalendarRangeByCultureSuccessTest()
+	{
+		SqlDatabaseTestActions testActions = this.clr_GetCalendarRangeByCultureSuccessTestData;
+		// Execute the pre-test script
+		// 
+		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		try
+		{
+			// Execute the test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+		}
+		finally
+		{
+			// Execute the post-test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+		}
+	}
+
+	[TestMethod()]
+	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
+	public void clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTest()
+	{
+		SqlDatabaseTestActions testActions = this.clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTestData;
+		// Execute the pre-test script
+		// 
+		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		try
+		{
+			// Execute the test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+		}
+		finally
+		{
+			// Execute the post-test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+		}
+	}
+
+	[TestMethod()]
+	[ExpectedSqlException(MessageNumber = 6522, Severity = 16, State = 1)]
+	public void clr_GetCalendarRangeByCultureSqlNullValueExceptionTest()
+	{
+		SqlDatabaseTestActions testActions = this.clr_GetCalendarRangeByCultureSqlNullValueExceptionTestData;
+		// Execute the pre-test script
+		// 
+		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		try
+		{
+			// Execute the test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+		}
+		finally
+		{
+			// Execute the post-test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+		}
+	}
+
+	[TestMethod()]
+	public void clr_GetCalendarRangeByCultureSpeedTest()
+	{
+		SqlDatabaseTestActions testActions = this.clr_GetCalendarRangeByCultureSpeedTestData;
+		// Execute the pre-test script
+		// 
+		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		try
+		{
+			// Execute the test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+		}
+		finally
+		{
+			// Execute the post-test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+		}
+	}
+
+	[TestMethod()]
+	public void clr_GetCalendarRangeByCultureNullTest()
+	{
+		SqlDatabaseTestActions testActions = this.clr_GetCalendarRangeByCultureNullTestData;
+		// Execute the pre-test script
+		// 
+		System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
+		SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
+		try
+		{
+			// Execute the test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
+			SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
+		}
+		finally
+		{
+			// Execute the post-test script
+			// 
+			System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
+			SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
+		}
+	}
+
+
+
+
 	private SqlDatabaseTestActions clr_GetAllCulturesSuccessTestData;
 	private SqlDatabaseTestActions clr_GetCultureByCodeArgumentOutOfRangeExceptionTestData;
 	private SqlDatabaseTestActions clr_GetCultureByNameSqlNullValueExceptionTestData;
-	private SqlDatabaseTestActions clr_GetDateRangeSuccessTestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeSuccessTestData;
 	private SqlDatabaseTestActions clr_GetNeutralCulturesSuccessTestData;
 	private SqlDatabaseTestActions clr_GetCultureByCodeSqlNullValueExceptionTestData;
 	private SqlDatabaseTestActions clr_GetCultureByCodeSuccessTestData;
 	private SqlDatabaseTestActions clr_GetCultureByNameSuccessTestData;
 	private SqlDatabaseTestActions clr_GetCultureByNameUnknownLocaleTestData;
 	private SqlDatabaseTestActions clr_GetCultureByNameCultureNotFoundExceptionTestData;
-	private SqlDatabaseTestActions clr_GetDateRangeArgumentExceptionTestData;
-	private SqlDatabaseTestActions clr_GetDateRangeNullTestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeArgumentOutOfRangeExceptionTestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeNullTestData;
 	private SqlDatabaseTestActions clr_GetLangageCodeIdentifierSuccessTestData;
 	private SqlDatabaseTestActions clr_GetLangageCodeIdentifierSqlNullValueExceptionTestData;
 	private SqlDatabaseTestActions private_WhoAmITestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeByCultureSuccessTestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeByCultureArgumentOutOfRangeExceptionTestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeByCultureSqlNullValueExceptionTestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeByCultureSpeedTestData;
+	private SqlDatabaseTestActions clr_GetCalendarRangeByCultureNullTestData;
 }

@@ -14,7 +14,7 @@ public partial class Globalization
 	/// </remarks>
 	/// <param name="lcid">This is the Windows Language Code Identifier.</param>
 	/// <returns>Culture related information.</returns>
-	/// <exception cref="SqlClrException"></exception>
+	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
 	[SqlFunction(Name = nameof(GetCultureByCode), FillRowMethodName = nameof(FillGetCultureRows),
 		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
 	public static IEnumerable GetCultureByCode(SqlInt32 lcid)

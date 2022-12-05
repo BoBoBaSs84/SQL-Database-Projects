@@ -9,7 +9,7 @@ public partial class Globalization
 	/// The <see cref="GetAllCultures"/> method should return culture related information of all cultures.
 	/// </summary>
 	/// <returns>Culture related information.</returns>
-	/// <exception cref="SqlClrException"></exception>
+	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
 	[SqlFunction(Name = nameof(GetAllCultures), FillRowMethodName = nameof(FillGetCultureRows),
 		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
 	public static IEnumerable GetAllCultures()
