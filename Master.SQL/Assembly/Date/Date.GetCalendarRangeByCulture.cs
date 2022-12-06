@@ -15,16 +15,21 @@ public partial class Date
 	/// <param name="cultureName">The culture of the calendar.</param>
 	/// <returns>The calendar table.</returns>
 	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
-	[SqlFunction(Name = nameof(GetCalendarRangeByCulture),
+	[SqlFunction(
+		Name = nameof(GetCalendarRangeByCulture),
 		FillRowMethodName = nameof(FillGetDateRangeRows),
 		DataAccess = DataAccessKind.Read,
-		TableDefinition = TableDefinition)]
-	public static IEnumerable GetCalendarRangeByCulture(SqlDateTime startDate, SqlDateTime endDate, [SqlFacet(MaxSize = 15, IsNullable = false)] SqlString cultureName)
+		TableDefinition = TableDefinition
+		)]
+	public static IEnumerable GetCalendarRangeByCulture(
+		[SqlFacet(IsNullable = true)] SqlDateTime startDate,
+		[SqlFacet(IsNullable = true)] SqlDateTime endDate,
+		[SqlFacet(MaxSize = 15, IsNullable = false)] SqlString cultureName
+		)
 	{
 		try
 		{
 			CultureInfo cultureInfo = CultureInfo.GetCultureInfo((string)cultureName);
-
 			return GetDateDataRange((DateTime)startDate, (DateTime)endDate, cultureInfo);
 		}
 		catch (Exception ex)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Data.SqlTypes;
 using System.Globalization;
 
 public partial class Date
@@ -35,7 +36,7 @@ public partial class Date
 	{
 		public DateTime Date { get; private set; }
 		public CultureInfo CultureInfo { get; private set; }
-		
+
 		public DateData(DateTime date, CultureInfo cultureInfo)
 		{
 			Date = date;
@@ -43,18 +44,18 @@ public partial class Date
 		}
 	}
 
-	private static ArrayList GetDateDataRange(DateTime dateStart, DateTime dateEnd, CultureInfo cultureInfo)
+	private static ArrayList GetDateDataRange(SqlDateTime dateStart, SqlDateTime dateEnd, CultureInfo cultureInfo)
 	{
 		if (dateStart > dateEnd)
 			throw new ArgumentOutOfRangeException($"{nameof(dateEnd)} is smaller than {nameof(dateStart)}", nameof(dateStart));
 
-		cultureInfo ??= CultureInfo.InvariantCulture;
-
 		ArrayList arrayToReturn = new();
-		while (dateStart <= dateEnd)
+		DateTime startDate = (DateTime)dateStart, endDate = (DateTime)dateEnd;
+
+		while (startDate <= endDate)
 		{
-			_ = arrayToReturn.Add(new DateData(dateStart, cultureInfo));
-			dateStart = dateStart.AddDays(1);
+			_ = arrayToReturn.Add(new DateData(startDate, cultureInfo));
+			startDate = startDate.AddDays(1);
 		}
 		return arrayToReturn;
 	}

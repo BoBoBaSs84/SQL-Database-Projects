@@ -10,8 +10,12 @@ public partial class Globalization
 	/// </summary>
 	/// <returns>Culture related information.</returns>
 	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
-	[SqlFunction(Name = nameof(GetNeutralCultures), FillRowMethodName = nameof(FillGetCultureRows),
-		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
+	[SqlFunction(
+		Name = nameof(GetNeutralCultures),
+		FillRowMethodName = nameof(FillGetCultureRows),
+		DataAccess = DataAccessKind.Read,
+		TableDefinition = TableDefinition
+		)]
 	public static IEnumerable GetNeutralCultures()
 	{
 		try

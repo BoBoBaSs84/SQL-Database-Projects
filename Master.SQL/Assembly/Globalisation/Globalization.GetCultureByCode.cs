@@ -15,17 +15,18 @@ public partial class Globalization
 	/// <param name="lcid">This is the Windows Language Code Identifier.</param>
 	/// <returns>Culture related information.</returns>
 	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
-	[SqlFunction(Name = nameof(GetCultureByCode), FillRowMethodName = nameof(FillGetCultureRows),
-		DataAccess = DataAccessKind.Read, TableDefinition = TableDefinition)]
-	public static IEnumerable GetCultureByCode(SqlInt32 lcid)
+	[SqlFunction(
+		Name = nameof(GetCultureByCode),
+		FillRowMethodName = nameof(FillGetCultureRows),
+		DataAccess = DataAccessKind.Read,
+		TableDefinition = TableDefinition
+		)]
+	public static IEnumerable GetCultureByCode([SqlFacet(IsNullable = false)] SqlInt32 lcid)
 	{
 		try
 		{
 			ArrayList result = new();
 			CultureInfo cultureInfo = CultureInfo.GetCultureInfo((int)lcid);
-
-			cultureInfo ??= CultureInfo.InvariantCulture;
-
 			_ = result.Add(new CultureData(cultureInfo.Name));
 			return result;
 		}

@@ -13,16 +13,20 @@ public partial class Date
 	/// <param name="endDate">The end date of the table.</param>
 	/// <returns>A list of objects (of type <see cref="DateTime"/>).</returns>
 	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
-	[SqlFunction(Name = nameof(GetCalendarRange),
+	[SqlFunction(
+		Name = nameof(GetCalendarRange),
 		FillRowMethodName = nameof(FillGetDateRangeRows),
 		DataAccess = DataAccessKind.Read,
-		TableDefinition = TableDefinition)]
-	public static IEnumerable GetCalendarRange(SqlDateTime startDate, SqlDateTime endDate)
+		TableDefinition = TableDefinition
+		)]
+	public static IEnumerable GetCalendarRange(
+		[SqlFacet(IsNullable = true)] SqlDateTime startDate,
+		[SqlFacet(IsNullable = true)] SqlDateTime endDate
+		)
 	{
 		try
 		{
-			CultureInfo cultureInfo = CultureInfo.InvariantCulture;
-			return GetDateDataRange((DateTime)startDate, (DateTime)endDate, cultureInfo);
+			return GetDateDataRange(startDate, endDate, CultureInfo.InvariantCulture);
 		}
 		catch (Exception ex)
 		{

@@ -8,10 +8,9 @@ public partial class Globalization
 		$"EnglishName NVARCHAR(100), ThreeLetterISO NVARCHAR(5), TwoLetterISO NVARCHAR(5), IsNeutralCulture BIT, LCID INT," +
 		$"ANSICodePage INT";
 
-	private static void FillGetCultureRows(object objCultureData, out string cultureName,
-		out string nativeName, out string displayName, out string englishName,
-		out string threeLetterISO, out string twoLetterISO, out bool isNeutralCulture,
-		out int lcid, out int ansiCodePage)
+	private static void FillGetCultureRows(object objCultureData, out string cultureName, out string nativeName,
+		out string displayName, out string englishName, out string threeLetterISO, out string twoLetterISO,
+		out bool isNeutralCulture, out int lcid, out int ansiCodePage)
 	{
 		CultureData cultureData = objCultureData as CultureData;
 		cultureName = cultureData.TextInfo.CultureName;
