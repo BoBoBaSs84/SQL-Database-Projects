@@ -3,8 +3,6 @@ using System;
 using System.Data.SqlTypes;
 using System.Globalization;
 
-namespace Master.SQL;
-
 public partial class Globalization
 {
 	/// <summary>

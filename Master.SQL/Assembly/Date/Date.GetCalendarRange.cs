@@ -7,7 +7,7 @@ using System.Globalization;
 public partial class Date
 {
 	/// <summary>
-	/// The <see cref="GetDateDataRange(DateTime, DateTime)"/> method should return a calendar table.
+	/// The <see cref="GetCalendarRange(SqlDateTime, SqlDateTime)"/> method should return a calendar table.
 	/// </summary>
 	/// <param name="startDate">The start date of the table.</param>
 	/// <param name="endDate">The end date of the table.</param>
