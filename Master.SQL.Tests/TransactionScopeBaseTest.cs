@@ -5,9 +5,9 @@ using System.Transactions;
 namespace Master.SQL.Tests;
 
 [TestClass]
-public abstract class TransactionScopeBaseTest : SqlDatabaseTestClass
+public class TransactionScopeBaseTest : SqlDatabaseTestClass
 {
-	private TransactionScope transaction;
+	private TransactionScope transaction = default!;
 
 	[TestInitialize()]
 	public void TestInitialize()

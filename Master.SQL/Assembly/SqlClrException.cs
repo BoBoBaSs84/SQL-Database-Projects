@@ -1,23 +1,23 @@
 using System;
 
 /// <summary>
-/// This is the custom sql server clr assembly exception.
+/// This is the custom sql server clr exception.
 /// </summary>
 internal sealed class SqlClrException : Exception
 {
 	/// <summary>
-	/// The standard constructor.
+	/// Initializes a new instance of the <see cref="SqlClrException"/> class.
 	/// </summary>
-	/// <param name="message"></param>
+	/// <param name="message">The exception message.</param>
 	public SqlClrException(string message) : base(message)
 	{
 	}
 
 	/// <summary>
-	/// The "little bit" more constructor.
+	/// Initializes a new instance of the <see cref="SqlClrException"/> class.
 	/// </summary>
-	/// <param name="message"></param>
-	/// <param name="innerException"></param>
+	/// <param name="message">The exception message.</param>
+	/// <param name="innerException">The inner exception.</param>
 	public SqlClrException(string message, Exception innerException) : base(message, innerException)
 	{
 	}
