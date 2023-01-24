@@ -140,10 +140,6 @@
     <Folder Include="private\Functions\Table-valued Functions" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Publish\Master.SQL.BOBO-DEV.publish.xml" />
-    <None Include="Publish\Master.SQL.LOCALDB.publish.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Build Include="Security\Schema\clr.sql" />
     <Build Include="private\private.sql" />
     <Build Include="private\Functions\Table-valued Functions\private.WhoAmI.sql" />
@@ -172,5 +168,8 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Deployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Publish\Master.SQL.publish.xml" />
   </ItemGroup>
 </Project>

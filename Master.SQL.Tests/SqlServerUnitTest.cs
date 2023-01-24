@@ -1,28 +1,11 @@
 ﻿using Microsoft.Data.Tools.Schema.Sql.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Transactions;
 
 namespace Master.SQL.Tests;
 [TestClass()]
-public class SqlServerUnitTest : SqlDatabaseTestClass
+public class SqlServerUnitTest : TransactionScopeBaseTest
 {
-	private TransactionScope transaction;
-
 	public SqlServerUnitTest() => InitializeComponent();
-
-	[TestInitialize()]
-	public void TestInitialize()
-	{
-		transaction = new();
-		base.InitializeTest();
-	}
-
-	[TestCleanup()]
-	public void TestCleanup()
-	{
-		base.CleanupTest();
-		transaction.Dispose();
-	}
 
 	#region Designer support code
 
@@ -435,7 +418,6 @@ public class SqlServerUnitTest : SqlDatabaseTestClass
 	}
 
 	#endregion
-
 
 	#region Additional test attributes
 	//
