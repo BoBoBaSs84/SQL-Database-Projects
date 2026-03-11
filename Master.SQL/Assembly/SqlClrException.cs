@@ -10,8 +10,7 @@ internal sealed class SqlClrException : Exception
 	/// </summary>
 	/// <param name="message">The exception message.</param>
 	public SqlClrException(string message) : base(message)
-	{
-	}
+	{ }
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="SqlClrException"/> class.
@@ -19,6 +18,5 @@ internal sealed class SqlClrException : Exception
 	/// <param name="message">The exception message.</param>
 	/// <param name="innerException">The inner exception.</param>
 	public SqlClrException(string message, Exception innerException) : base(message, innerException)
-	{
-	}
+	{ }
 }

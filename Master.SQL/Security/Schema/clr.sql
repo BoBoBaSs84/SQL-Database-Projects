@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [clr]
+﻿CREATE SCHEMA [clr];

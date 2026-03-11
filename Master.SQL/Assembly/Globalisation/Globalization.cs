@@ -24,12 +24,8 @@ public partial class Globalization
 		ansiCodePage = cultureData.TextInfo.ANSICodePage;
 	}
 
-	private class CultureData : CultureInfo
-	{
-		public CultureData(string name) : base(name)
-		{
-		}
-	}
+	private class CultureData(string name) : CultureInfo(name)
+	{ }
 
 	private static IEnumerable GetCultures(CultureTypes cultureTypes)
 	{
