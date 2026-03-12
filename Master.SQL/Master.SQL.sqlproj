@@ -106,8 +106,5 @@
     <None Include="..\..\BB84.Home\StrongName\PrivateKey.snk">
       <Link>PrivateKey.snk</Link>
     </None>
-    <None Include="..\..\BB84.Home\SSL-Certificates\bb84home\home.fritz.box.pfx">
-      <Link>home.fritz.box.pfx</Link>
-    </None>
   </ItemGroup>
 </Project>
