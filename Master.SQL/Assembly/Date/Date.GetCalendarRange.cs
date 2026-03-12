@@ -20,8 +20,8 @@ public partial class Date
 		TableDefinition = TableDefinition
 		)]
 	public static IEnumerable GetCalendarRange(
-		[SqlFacet(IsNullable = true)] SqlDateTime startDate,
-		[SqlFacet(IsNullable = true)] SqlDateTime endDate
+		[SqlFacet(IsNullable = false)] SqlDateTime startDate,
+		[SqlFacet(IsNullable = false)] SqlDateTime endDate
 		)
 	{
 		try

@@ -22,15 +22,15 @@ public partial class Date
 		TableDefinition = TableDefinition
 		)]
 	public static IEnumerable GetCalendarRangeByCulture(
-		[SqlFacet(IsNullable = true)] SqlDateTime startDate,
-		[SqlFacet(IsNullable = true)] SqlDateTime endDate,
+		[SqlFacet(IsNullable = false)] SqlDateTime startDate,
+		[SqlFacet(IsNullable = false)] SqlDateTime endDate,
 		[SqlFacet(MaxSize = 15, IsNullable = false)] SqlString cultureName
 		)
 	{
 		try
 		{
 			CultureInfo cultureInfo = CultureInfo.GetCultureInfo((string)cultureName);
-			return GetDateDataRange((DateTime)startDate, (DateTime)endDate, cultureInfo);
+			return GetDateDataRange(startDate, endDate, cultureInfo);
 		}
 		catch (Exception ex)
 		{

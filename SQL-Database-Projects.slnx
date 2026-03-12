@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Master.SQL.Tests/Master.SQL.Tests.csproj" Id="bf2158f1-caed-46e3-8b90-d48e7d873b7e" />
+  <Project Path="Master.SQL/Master.SQL.sqlproj" Id="2df37ed5-c455-45aa-8819-41cf9735037a">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

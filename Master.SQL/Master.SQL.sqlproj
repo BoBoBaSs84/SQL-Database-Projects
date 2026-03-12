@@ -6,90 +6,28 @@
     <Name>Master.SQL</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{159d6ba4-a5a2-4485-9a11-959dea298d47}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <ProjectGuid>{2df37ed5-c455-45aa-8819-41cf9735037a}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
     <RootNamespace>Master.SQL</RootNamespace>
     <AssemblyName>Master.CLR</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
+    <LangVersion>latest</LangVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultSchema>clr</DefaultSchema>
     <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
     <TargetFrameworkProfile />
-    <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile>BoBoBaSs84.pfx</AssemblyOriginatorKeyFile>
-    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
-    <AnsiNulls>True</AnsiNulls>
-    <QuotedIdentifier>True</QuotedIdentifier>
-    <QueryStoreDesiredState>Off</QueryStoreDesiredState>
-    <QueryStoreFlushInterval>0</QueryStoreFlushInterval>
-    <QueryStoreStatsInterval>0</QueryStoreStatsInterval>
-    <QueryStoreMaxPlansPerQuery>0</QueryStoreMaxPlansPerQuery>
-    <QueryStoreStaleQueryThreshold>0</QueryStoreStaleQueryThreshold>
-    <QueryStoreMaxStorageSize>0</QueryStoreMaxStorageSize>
-    <DbScopedConfigLegacyCardinalityEstimation>Off</DbScopedConfigLegacyCardinalityEstimation>
-    <DbScopedConfigMaxDOP>0</DbScopedConfigMaxDOP>
-    <DbScopedConfigParameterSniffing>On</DbScopedConfigParameterSniffing>
-    <DbScopedConfigOptimizerHotfixes>Off</DbScopedConfigOptimizerHotfixes>
-    <DelayedDurability>DISABLED</DelayedDurability>
-    <AutoCreateStatisticsIncremental>False</AutoCreateStatisticsIncremental>
-    <MemoryOptimizedElevateToSnapshot>False</MemoryOptimizedElevateToSnapshot>
-    <Containment>None</Containment>
-    <IsNestedTriggersOn>True</IsNestedTriggersOn>
-    <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
-    <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
-    <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
-    <TargetRecoveryTimePeriod>0</TargetRecoveryTimePeriod>
-    <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
-    <IsChangeTrackingOn>False</IsChangeTrackingOn>
-    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
-    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
-    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
-    <IsEncryptionOn>False</IsEncryptionOn>
-    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
-    <Trustworthy>False</Trustworthy>
-    <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
-    <PageVerify>CHECKSUM</PageVerify>
-    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
-    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
-    <Parameterization>SIMPLE</Parameterization>
-    <AllowSnapshotIsolation>True</AllowSnapshotIsolation>
-    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
-    <VardecimalStorageFormatOn>False</VardecimalStorageFormatOn>
-    <SupplementalLoggingOn>False</SupplementalLoggingOn>
-    <CompatibilityMode>150</CompatibilityMode>
-    <AnsiNullDefault>False</AnsiNullDefault>
-    <AnsiPadding>False</AnsiPadding>
-    <AnsiWarnings>False</AnsiWarnings>
-    <ArithAbort>False</ArithAbort>
-    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
-    <NumericRoundAbort>False</NumericRoundAbort>
-    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
-    <DatabaseChaining>False</DatabaseChaining>
-    <DatabaseState>ONLINE</DatabaseState>
-    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
-    <DefaultCursor>GLOBAL</DefaultCursor>
-    <AutoClose>False</AutoClose>
-    <AutoCreateStatistics>True</AutoCreateStatistics>
-    <AutoShrink>False</AutoShrink>
-    <AutoUpdateStatistics>True</AutoUpdateStatistics>
-    <TornPageDetection>False</TornPageDetection>
-    <DatabaseAccess>MULTI_USER</DatabaseAccess>
-    <Recovery>SIMPLE</Recovery>
-    <EnableFullTextSearch>False</EnableFullTextSearch>
-    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-    <PermissionSet>SAFE</PermissionSet>
-    <AssemblyOwner>dbo</AssemblyOwner>
-    <DefaultSchema>clr</DefaultSchema>
-    <GenerateSqlClrDdl>True</GenerateSqlClrDdl>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\BB84.Home\StrongName\PrivateKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -113,10 +51,6 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DataRetentionEnabled>False</DataRetentionEnabled>
-    <DocumentationFile>
-    </DocumentationFile>
-    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -140,12 +74,16 @@
     <Folder Include="private\Functions\Table-valued Functions" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Security\Schema\clr.sql" />
-    <Build Include="private\private.sql" />
-    <Build Include="private\Functions\Table-valued Functions\private.WhoAmI.sql" />
+    <PreDeploy Include="Deployment\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PreDeploy Include="Deployment\Script.PreDeployment.sql" />
+    <Build Include="Security\Schema\clr.sql" />
+    <Build Include="private\Functions\Table-valued Functions\private.WhoAmI.sql" />
+    <Build Include="Security\Schema\private.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assembly\SqlClrException.cs" />
@@ -161,15 +99,12 @@
     <Compile Include="Assembly\Date\Date.GetCalendarRangeByCulture.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Core" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
     <PostDeploy Include="Deployment\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish\Master.SQL.publish.xml" />
+    <None Include="..\..\BB84.Home\StrongName\PrivateKey.snk">
+      <Link>PrivateKey.snk</Link>
+    </None>
   </ItemGroup>
 </Project>

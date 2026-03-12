@@ -32,16 +32,10 @@ public partial class Date
 		eraNameShort = dateData.CultureInfo.DateTimeFormat.GetAbbreviatedEraName(dateData.CultureInfo.Calendar.GetEra(dateData.Date));
 	}
 
-	private class DateData
+	private class DateData(DateTime date, CultureInfo cultureInfo)
 	{
-		public DateTime Date { get; private set; }
-		public CultureInfo CultureInfo { get; private set; }
-
-		public DateData(DateTime date, CultureInfo cultureInfo)
-		{
-			Date = date;
-			CultureInfo = cultureInfo;
-		}
+		public DateTime Date { get; } = date;
+		public CultureInfo CultureInfo { get; } = cultureInfo;
 	}
 
 	private static ArrayList GetDateDataRange(SqlDateTime dateStart, SqlDateTime dateEnd, CultureInfo cultureInfo)
