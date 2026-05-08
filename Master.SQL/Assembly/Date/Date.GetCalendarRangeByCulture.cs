@@ -16,16 +16,15 @@ public partial class Date
 	/// <returns>The calendar table.</returns>
 	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
 	[SqlFunction(
-		Name = nameof(GetCalendarRangeByCulture),
-		FillRowMethodName = nameof(FillGetDateRangeRows),
 		DataAccess = DataAccessKind.Read,
-		TableDefinition = TableDefinition
-		)]
+		FillRowMethodName = nameof(FillGetDateRangeRows),
+		IsDeterministic =	true,
+		Name = nameof(GetCalendarRangeByCulture),
+		TableDefinition = TableDefinition)]
 	public static IEnumerable GetCalendarRangeByCulture(
 		[SqlFacet(IsNullable = false)] SqlDateTime startDate,
 		[SqlFacet(IsNullable = false)] SqlDateTime endDate,
-		[SqlFacet(MaxSize = 15, IsNullable = false)] SqlString cultureName
-		)
+		[SqlFacet(IsNullable = false, MaxSize = 5)] SqlString cultureName)
 	{
 		try
 		{

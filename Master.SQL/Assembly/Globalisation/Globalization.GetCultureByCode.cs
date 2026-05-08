@@ -16,11 +16,11 @@ public partial class Globalization
 	/// <returns>Culture related information.</returns>
 	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
 	[SqlFunction(
-		Name = nameof(GetCultureByCode),
-		FillRowMethodName = nameof(FillGetCultureRows),
 		DataAccess = DataAccessKind.Read,
-		TableDefinition = TableDefinition
-		)]
+		FillRowMethodName = nameof(FillGetCultureRows),
+		IsDeterministic = true,
+		Name = nameof(GetCultureByCode),
+		TableDefinition = TableDefinition)]
 	public static IEnumerable GetCultureByCode([SqlFacet(IsNullable = false)] SqlInt32 lcid)
 	{
 		try

@@ -7,18 +7,18 @@ using System.Globalization;
 public partial class Date
 {
 	/// <summary>
-	/// The <see cref="GetDateDataRange(DateTime, DateTime)"/> method should return a calendar table.
+	/// The <see cref="GetCalendarRange(SqlDateTime, SqlDateTime)"/> method should return a calendar table.
 	/// </summary>
 	/// <param name="startDate">The start date of the table.</param>
 	/// <param name="endDate">The end date of the table.</param>
 	/// <returns>A list of objects (of type <see cref="DateTime"/>).</returns>
 	/// <exception cref="SqlClrException">Simply rethrows the exception that occured.</exception>
 	[SqlFunction(
-		Name = nameof(GetCalendarRange),
-		FillRowMethodName = nameof(FillGetDateRangeRows),
 		DataAccess = DataAccessKind.Read,
-		TableDefinition = TableDefinition
-		)]
+		FillRowMethodName = nameof(FillGetDateRangeRows),
+		IsDeterministic = true,
+		Name = nameof(GetCalendarRange),
+		TableDefinition = TableDefinition)]
 	public static IEnumerable GetCalendarRange(
 		[SqlFacet(IsNullable = false)] SqlDateTime startDate,
 		[SqlFacet(IsNullable = false)] SqlDateTime endDate

@@ -16,10 +16,9 @@ public partial class Globalization
 	[SqlFunction(
 		DataAccess = DataAccessKind.None,
 		IsDeterministic = true,
-		SystemDataAccess = SystemDataAccessKind.None,
-		IsPrecise = true
-		)]
-	public static SqlInt32 GetLangageCodeIdentifier([SqlFacet(MaxSize = 15, IsNullable = false)] SqlString cultureName)
+		IsPrecise = true,
+		SystemDataAccess = SystemDataAccessKind.None)]
+	public static SqlInt32 GetLangageCodeIdentifier([SqlFacet(IsNullable = false, MaxSize = 5)] SqlString cultureName)
 	{
 		try
 		{
